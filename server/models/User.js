@@ -1,5 +1,6 @@
-const { Schema, model, } = require('mongoose');
+const { Schema, model } = require('mongoose');
 const bcrypt = require('bcrypt');
+const { Donation } = require('./Donation');
 
 const userSchema = new Schema({
   username: {
@@ -19,10 +20,10 @@ const userSchema = new Schema({
     required: true,
     minlength: 6,
   },
-  donation_id: [
+  donation_ids: [
     {
       type: Schema.Types.ObjectId,
-      ref: 'Donation',
+      ref: Donation,
     },
   ],
 });
