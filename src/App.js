@@ -3,6 +3,7 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Home from './pages/Home';
+import About from './pages/About';
 
  
 function App() {
@@ -10,6 +11,10 @@ function App() {
     {
       path: "/",
       element: <Home/>,
+    },
+    {
+      path: "/about",
+      element: <About/>,
     }
   ]);
 
