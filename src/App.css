@@ -323,7 +323,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   border-right: 0.08em solid #666;
 }
 
-/************ Resume Css ************/
+/************ About us Css ************/
 
 .about {
   margin-top: 0;
@@ -422,6 +422,10 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   bottom: 0;
   width: 40%;
   z-index: -4;
+}
+/************ Donationfeed Css ************/
+.donationimg{
+  width: 100% !important;
 }
 
 /************ Projects/Portfolio Css ************/

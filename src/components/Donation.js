@@ -1,12 +1,12 @@
-import { Container, Row, Col } from "react-bootstrap";
+import { Container, Row, Col, Card, ListGroup } from "react-bootstrap";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import colorSharp from "../assets/img/color-sharp.png"
-import teamImg from "../assets/img/teamphoto.png";
+import fitnessImg from "../assets/img/fitness-app.png";
 
 
 // creating to sliding carousel display resume of job history
-export const Donation = () => {
+export const ResumeComp = () => {
     const responsive = {
         superLargeDesktop: {
 
@@ -28,39 +28,30 @@ export const Donation = () => {
       };
 
 return (
-      <section className="about" id="about">
+      <section className="resume" id="resume">
         <Container>
             <Row>
                 <Col>
-                <div className="about-bx">
-                    <h2>
-                      Live Donation Feed
-                    </h2>
-                    <p>Launched in 2022, Helping Hands is the world’s largest social donation platform. With over 1 million items being donated from more than 20 different countries, we’re on a mission to help people donate new and pre-loved items to those in need.</p>
-                    <div className="about-imgbx">
-                      <img src={teamImg} />
-                        <div className="about-txtx">
-                            <h4>Web Development</h4>
-                            <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span>
-                        </div>
-                    </div>
-                  </div>
-                <Carousel responsive={responsive} infinite={true} className="about-slide">
-                    <div className="item">
-                        <h3>Web Development</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ornare congue pharetra. Curabitur non leo ut quam tincidunt maximus. Etiam id diam at velit ornare vehicula eu nec augue. Nunc id faucibus sem, ac mollis nulla. Sed luctus viverra pulvinar.</p>
-                    </div>
-                    <div className="item">
-                        <h3>Web Design</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ornare congue pharetra. Curabitur non leo ut quam tincidunt maximus. Etiam id diam at velit ornare vehicula eu nec augue. Nunc id faucibus sem, ac mollis nulla. Sed luctus viverra pulvinar.</p>
-                    </div>
-                    <div className="item">
-                        <h3>UX/UI</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ornare congue pharetra. Curabitur non leo ut quam tincidunt maximus. Etiam id diam at velit ornare vehicula eu nec augue. Nunc id faucibus sem, ac mollis nulla. Sed luctus viverra pulvinar.</p>
-                    </div>
-                </Carousel>
+commit
                 </Col>
             </Row>
+        </Container>
+        <Container>
+          <Card style={{ width: '30rem' }}>
+            <Card.Img className="donationImg" variant="top" src={fitnessImg} />
+            <Card.Body>
+              <Card.Title>Item Title</Card.Title>
+              <Card.Text>
+                Item Description: Some quick example text to build on the card title and make up the
+                bulk of the card's content.
+              </Card.Text>
+            </Card.Body>
+            <ListGroup className="list-group-flush">
+              <ListGroup.Item>Cras justo odio</ListGroup.Item>
+              <ListGroup.Item>Dapibus ac facilisis in</ListGroup.Item>
+              <ListGroup.Item>Vestibulum at eros</ListGroup.Item>
+            </ListGroup>
+          </Card>
         </Container>
         <img className="background-image-left" src={colorSharp} />
       </section>

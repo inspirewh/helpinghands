@@ -4,6 +4,7 @@ import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Home from './pages/Home';
 import About from './pages/About';
+import Donation from './pages/Donation';
 
  
 function App() {
@@ -15,6 +16,10 @@ function App() {
     {
       path: "/about",
       element: <About/>,
+    },
+    {
+      path: "/donation-feed",
+      element: <Donation/>,
     }
   ]);
 
