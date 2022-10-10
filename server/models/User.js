@@ -26,7 +26,10 @@ const userSchema = new Schema({
       ref: Donation,
     },
   ],
-});
+}, {
+    timestamps: true,
+}
+);
 
 userSchema.pre('save', async function (next) {
   if (this.isNew || this.isModified('password')) {

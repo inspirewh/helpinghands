@@ -6,8 +6,12 @@ const typeDefs = gql`
     username: String
     email: String
     password: String
-    donation_ids: [Donation]!
+    donations: [Donation]!
   }
+  type Auth {
+    token: String
+    user: User
+   }
 
   type Donation {
     _id: ID
@@ -15,7 +19,7 @@ const typeDefs = gql`
     item_description: String
     item_recieved: Boolean
     item_imageUrl: String
-    item_quantity: Number
+    item_quantity: Int
     item_status: String
   }
 
