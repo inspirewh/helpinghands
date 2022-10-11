@@ -47,6 +47,7 @@ export const NavBar = () => {
 
                 </Nav>
                 <span className="navbar-text">
+                    <Link to="/login" id="loginbtn" className={activeLink === 'login' ? 'active navbar-link' : 'navbar-link'} onClick={() => onUpdateActiveLink('login')}>Login</Link>
                     <div className="social-icon">
                         <a href="www.facebook.com"><img src={navIcon1} alt="nav icon"/></a>
                         <a href="www.facebook.com"><img src={navIcon2} alt="nav icon"/></a>
