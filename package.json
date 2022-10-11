@@ -17,11 +17,7 @@
     "concurrently": "^5.1.0"
   },
   "dependencies": {
-<<<<<<< HEAD
-    "react-card-carousel": "^1.1.3"
-=======
     "bcrypt": "^5.1.0",
     "dotenv": "^16.0.3"
->>>>>>> e9e5edbdcf5a3215d7d71f9c97fbbc55da4f310a
   }
 }

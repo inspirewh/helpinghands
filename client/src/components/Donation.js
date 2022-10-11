@@ -1,4 +1,4 @@
-import { Container, Row, Col, Card, ListGroup, Carousel } from "react-bootstrap";
+import { Container, Row, Col, Carousel } from "react-bootstrap";
 import "react-multi-carousel/lib/styles.css";
 import colorSharp from "../assets/img/color-sharp.png"
 import donationImg from "../assets/img/tshirtPlaceholder.jpg";

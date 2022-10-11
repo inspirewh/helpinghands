@@ -1,8 +1,7 @@
 import { useState }from "react";
 import { Col, Container, Row } from "react-bootstrap";
-import contactImg from "../assets/img/contact-img.svg";
 
-export const Signup = () => {
+export const SignupForm = () => {
     //the initial default state
     const formInitialDetails = {
         fullName: '',

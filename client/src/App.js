@@ -5,6 +5,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Home from './pages/Home';
 import About from './pages/About';
 import Donation from './pages/Donation';
+import Signup from './pages/Signup';
 
  
 function App() {
@@ -20,6 +21,10 @@ function App() {
     {
       path: "/donation-feed",
       element: <Donation/>,
+    },
+    {
+      path: "/signup",
+      element: <Signup/>,
     }
   ]);
 

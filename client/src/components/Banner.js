@@ -52,7 +52,7 @@ const tick = () => {
                         <h1>{``} <span className="wrap"> {text}</span> </h1>
                     </div>
                     <div className="header-bx">
-                        <Link to="/contact">
+                        <Link to="/signup">
                             <button className="main-btn" >Start Donating <ArrowRightCircle size={25} /></button>
                         </Link>
                      </div>

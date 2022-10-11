@@ -51,7 +51,7 @@ export const NavBar = () => {
                         <a href="www.facebook.com"><img src={navIcon1} alt="nav icon"/></a>
                         <a href="www.facebook.com"><img src={navIcon2} alt="nav icon"/></a>
                     </div>
-                    <Link to="/contact">
+                    <Link to="/signup">
                         <button className="main-btn" >Start Donating <ArrowRightCircle size={25} /></button>
                     </Link>
                 </span>
