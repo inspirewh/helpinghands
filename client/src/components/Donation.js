@@ -1,12 +1,13 @@
-import { Container, Row, Col, Carousel } from "react-bootstrap";
+import { Container, Row, Col } from "react-bootstrap";
+import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import colorSharp from "../assets/img/color-sharp.png"
 import donationImg from "../assets/img/tshirtPlaceholder.jpg";
 
 
-// creating to sliding carousel display resume of job history
+// creating to sliding carousel display donation of job history
 export const DonationFeed = () => {
-      const responsive = {
+    const responsive = {
         superLargeDesktop: {
 
           breakpoint: { max: 4000, min: 3000 },
@@ -25,44 +26,50 @@ export const DonationFeed = () => {
           items: 1
         }
       };
-  return (
-    <section className="donation" id="donation">
-      <Container>
-        <Row>
-          <Col>
-            <div className="donation-bx">
-              <h2>
-                Live Donation Feed  
-              </h2>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ornare congue pharetra. Curabitur non leo ut quam tincidunt maximus. Etiam id diam at velit ornare vehicula eu nec augue. Nunc id faucibus sem, ac mollis nulla. Sed luctus viverra pulvinar.</p>
-            </div>
-          </Col>
-          </Row>
+
+return (
+      <section className="donation" id="donation">
+        <Container>
+            <Row>
+                <Col>
+                <div className="donation-bx">
+                    <h2>
+                      Live Donation Feed  
+                    </h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ornare congue pharetra. Curabitur non leo ut quam tincidunt maximus. Etiam id diam at velit ornare vehicula eu nec augue. Nunc id faucibus sem, ac mollis nulla. Sed luctus viverra pulvinar.</p>
+                    <div className="donation-imgbx">  
+                        <div className="donation-txtx">
+                            <h4>Web Development</h4>
+                            <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span>
+                        </div>
+                    </div>
+                  </div>
+                </Col>
+            </Row>
           </Container>
-          <Container className="donation-container">
-          <Row>
-            <Col>
-              <Carousel responsive={responsive} infinite={true} className="resume-slide">
+          <Container>
+                <Carousel responsive={responsive} infinite={true} className="donation-slide">
                     <div className="item">
-                    <img src={donationImg} />
-                        <h3>Web Development</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ornare congue pharetra. Curabitur non leo ut quam tincidunt maximus. Etiam id diam at velit ornare vehicula eu nec augue. Nunc id faucibus sem, ac mollis nulla. Sed luctus viverra pulvinar.</p>
+                      <div className="donation-imgbx">
+                        <img src={donationImg}/></div>
+                        <h5>Donation Title</h5>
+                        <p>Donation Description:Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ornare congue pharetra. Curabitur non leo ut quam tincidunt maximus. Etiam id diam at velit ornare vehicula eu nec augue. Nunc id faucibus sem, ac mollis nulla. Sed luctus viverra pulvinar.</p>
                     </div>
                     <div className="item">
-                    <img src={donationImg} />
-                        <h3>Web Development</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ornare congue pharetra. Curabitur non leo ut quam tincidunt maximus. Etiam id diam at velit ornare vehicula eu nec augue. Nunc id faucibus sem, ac mollis nulla. Sed luctus viverra pulvinar.</p>
+                      <div className="donation-imgbx">
+                        <img src={donationImg}/></div>
+                        <h5>Donation Title</h5>
+                        <p>Donation Description:Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ornare congue pharetra. Curabitur non leo ut quam tincidunt maximus. Etiam id diam at velit ornare vehicula eu nec augue. Nunc id faucibus sem, ac mollis nulla. Sed luctus viverra pulvinar.</p>
                     </div>
                     <div className="item">
-                    <img src={donationImg} />
-                        <h3>Web Development</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ornare congue pharetra. Curabitur non leo ut quam tincidunt maximus. Etiam id diam at velit ornare vehicula eu nec augue. Nunc id faucibus sem, ac mollis nulla. Sed luctus viverra pulvinar.</p>
+                      <div className="donation-imgbx">
+                        <img src={donationImg}/></div>
+                        <h5>Donation Title</h5>
+                        <p>Donation Description:Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ornare congue pharetra. Curabitur non leo ut quam tincidunt maximus. Etiam id diam at velit ornare vehicula eu nec augue. Nunc id faucibus sem, ac mollis nulla. Sed luctus viverra pulvinar.</p>
                     </div>
                 </Carousel>
-              </Col>
-          </Row>
-      </Container>
-      <img className="background-image-left" src={colorSharp} />
-    </section>
-)
+        </Container>
+        <img className="background-image-left" src={colorSharp} />
+      </section>
+  )
 }

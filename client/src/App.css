@@ -390,7 +390,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 .about-imgbx:hover::before {
   height: 100%;
 }
-.about-imgbx:hover .resume-txtx {
+.about-imgbx:hover .donation-txtx {
   top: 50%;
   opacity: 1;
 }
@@ -447,25 +447,11 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   margin-top: 0;
   padding: 0 0 0 0;
   background-color: #fff;
+  padding-bottom: 200px !important;
 }
-.donation-bx {
-  border-radius: 64px;
-  text-align: center;
-  padding: 60px 50px;
-  margin-top: 160px;
-}
-
-.donationimg{
-  width: 100% !important;
-}
-.donation-container{
-  background-color: #f0f0f0 !important;
-  margin: 0 0 0 0;
-}
-
 .donation h2 {
-	font-size: 45px;
-	font-weight: 700;
+  font-size: 45px;
+  font-weight: 700;
   color: #535353;
 }
 .donation p {
@@ -475,6 +461,92 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   line-height: 1.5em;
   margin: 14px 0 75px 0;
 }
+
+.donation-bx {
+  border-radius: 64px;
+  text-align: center;
+  padding: 60px 50px;
+  margin-top: 160px;
+}
+.dontation-container{
+  background-color: 'blue'!important;
+  width:'100px';
+  height: '100px';
+}
+.item{
+  border-radius: 64px;
+  border-color: #B02F77 !important ;
+}
+.donation img {
+  width: 25%;
+}
+.donation-imgbx::before {
+  content: "";
+  background: linear-gradient(90.21deg, #6d6d6d -5.91%, #090619 111.58%);
+  opacity: 0.85;
+  position: absolute;
+  width: 100%;
+  height: 0;
+  transition: 0.4s ease-in-out;
+}
+.donation-imgbx {
+  position: relative;
+  border-radius: 30px;
+  overflow: hidden;
+  margin-bottom: 24px;
+}
+.donation-imgbx::before {
+  content: "";
+  background: linear-gradient(90.21deg, #6d6d6d -5.91%, #090619 111.58%);
+  opacity: 0.85;
+  position: absolute;
+  width: 25%;
+  height: 0;
+  transition: 0.4s ease-in-out;
+}
+
+.donation-txtx {
+  position: absolute;
+  text-align: center;
+  top: 65%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: 0.5s ease-in-out;
+  opacity: 0;
+  width: 100%;
+}
+.donation-txtx h4 {
+  font-size: 30px;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+  line-height: 1.1em;
+}
+.donation-txtx span {
+  font-style: italic;
+  font-weight: 400;
+  font-size: 15px;
+  letter-spacing: 0.8px;
+}
+.donation-slider {
+  width: 80%;
+  margin: 0 auto;
+  position: relative;
+}
+.donation-slider .item img {
+  width: 50%;
+  margin: 0 auto 15px auto;
+}
+.background-image-left {
+  top: 28%;
+  position: absolute;
+  bottom: 0;
+  width: 40%;
+  z-index: -4;
+}
+.donation h5{
+  color: #B02F77 !important;
+}
+
 
 /************ signupform Css ************/
 .signup {
