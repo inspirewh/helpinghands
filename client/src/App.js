@@ -7,6 +7,7 @@ import About from './pages/About';
 import Donation from './pages/Donation';
 import Signup from './pages/Signup';
 import Login from './pages/Login';
+import Contact from './pages/Contact';
 
  
 function App() {
@@ -30,6 +31,10 @@ function App() {
     {
       path: "/login",
       element: <Login/>,
+    },
+    {
+      path: "/contact",
+      element: <Contact/>,
     }
   ]);
 

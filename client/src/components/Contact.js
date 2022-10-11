@@ -1,13 +1,14 @@
 import { useState }from "react";
 import { Col, Container, Row } from "react-bootstrap";
 
-export const SignupForm = () => {
+export const Chat = () => {
     //the initial default state
     const formInitialDetails = {
-        fullName: '',
-        userName: '',
+        firstName: '',
+        lastName: '',
         email: '',
-        password: '',
+        phone: '',
+        message: '',
     }
     //A state that stores the inputdetails
     const [formDetails, setFormDetails] = useState(formInitialDetails);
@@ -23,29 +24,28 @@ export const SignupForm = () => {
     }
     
     return (
-        <section className="signup" id="connect">
+        <section className="contact" id="connect">
             <Container>
                 <Row className="justify-content-center align-items-center">
                     <Col md={6}>
-                        <h2>Start Donating</h2>
-                        <p>Simply register below to create your profile and you can start donating new or pre-loved items to those in need.</p>
+                        <h2>Get in touch</h2>
+                        <p>Want to know more about Helping Hands. Or want to get involved more and support those in need? Get in touch by completing the form below and we'll be in touch.</p>
                         <form>
                             <Row>
                                 <Col sm={6} className="px-1">
-                                    <input type="text" value={formDetails.fullName} placeholder= "Full Name" onChange={(e) => onFormUpdate('fullName', e.target.value)} />
+                                    <input type="text" value={formDetails.firstName} placeholder= "First Name" onChange={(e) => onFormUpdate('firstName', e.target.value)} />
                                 </Col>
                                 <Col sm={6} className="px-1">
-                                    <input type="text" value={formDetails.userName} placeholder= "User Name" onChange={(e) => onFormUpdate('userName', e.target.value)} />
+                                    <input type="text" value={formDetails.lastName} placeholder= "Last Name" onChange={(e) => onFormUpdate('lastName', e.target.value)} />
                                 </Col>
                                 <Col sm={6} className="px-1">
                                     <input type="email" value={formDetails.email} placeholder= "Email Address" onChange={(e) => onFormUpdate('email', e.target.value)} />
                                 </Col>
                                 <Col sm={6} className="px-1">
-                                    <input type="text" value={formDetails.password} placeholder= "Password" onChange={(e) => onFormUpdate('password', e.target.value)} />
+                                    <input type="tel" value={formDetails.phone} placeholder= "Phone" onChange={(e) => onFormUpdate('phone', e.target.value)} />
                                 </Col>
                                 <Col>
-                                    <p className="hyperlink-txt">Already have an account? <a href="/login">Click here to login.</a>
-                                    </p>
+                                    <textarea row="6" value={formDetails.message} placeholder= "Message" onChange={(e) => onFormUpdate('message', e.target.value)}/>
                                     <button type="submit"><span>{buttontext}</span></button>
                                 </Col>
                                 {
