@@ -1,11 +1,9 @@
 import { useState }from "react";
 import { Col, Container, Row } from "react-bootstrap";
 
-export const SignupForm = () => {
+export const LoginForm = () => {
     //the initial default state
     const formInitialDetails = {
-        fullName: '',
-        userName: '',
         email: '',
         password: '',
     }
@@ -27,16 +25,10 @@ export const SignupForm = () => {
             <Container>
                 <Row className="justify-content-center align-items-center">
                     <Col md={6}>
-                        <h2>Start Donating</h2>
-                        <p>Simply register below to create your profile and you can start donating new or pre-loved items to those in need.</p>
+                        <h2>Login</h2>
+                        <p>Simply login below to donating new or pre-loved items to those in need.</p>
                         <form>
                             <Row>
-                                <Col sm={6} className="px-1">
-                                    <input type="text" value={formDetails.fullName} placeholder= "Full Name" onChange={(e) => onFormUpdate('fullName', e.target.value)} />
-                                </Col>
-                                <Col sm={6} className="px-1">
-                                    <input type="text" value={formDetails.userName} placeholder= "User Name" onChange={(e) => onFormUpdate('userName', e.target.value)} />
-                                </Col>
                                 <Col sm={6} className="px-1">
                                     <input type="email" value={formDetails.email} placeholder= "Email Address" onChange={(e) => onFormUpdate('email', e.target.value)} />
                                 </Col>

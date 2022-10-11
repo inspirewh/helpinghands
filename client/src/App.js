@@ -6,6 +6,7 @@ import Home from './pages/Home';
 import About from './pages/About';
 import Donation from './pages/Donation';
 import Signup from './pages/Signup';
+import Login from './pages/Login';
 
  
 function App() {
@@ -25,6 +26,10 @@ function App() {
     {
       path: "/signup",
       element: <Signup/>,
+    },
+    {
+      path: "/login",
+      element: <Login/>,
     }
   ]);
 
