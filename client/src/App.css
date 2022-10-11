@@ -424,8 +424,37 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   z-index: -4;
 }
 /************ Donationfeed Css ************/
+.donation {
+  margin-top: 0;
+  padding: 0 0 0 0;
+  background-color: #fff;
+}
+.donation-bx {
+  border-radius: 64px;
+  text-align: center;
+  padding: 60px 50px;
+  margin-top: 160px;
+}
+
 .donationimg{
   width: 100% !important;
+}
+.donation-container{
+  background-color: #f0f0f0 !important;
+  margin: 0 0 0 0;
+}
+
+.donation h2 {
+	font-size: 45px;
+	font-weight: 700;
+  color: #535353;
+}
+.donation p {
+  color: #535353;
+  font-size: 18px;
+  letter-spacing: 0.8px;
+  line-height: 1.5em;
+  margin: 14px 0 75px 0;
 }
 
 /************ Projects/Portfolio Css ************/
