@@ -1,5 +1,6 @@
 import { useState }from "react";
 import { Col, Container, Row } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
 export const SignupForm = () => {
     //the initial default state
@@ -44,6 +45,8 @@ export const SignupForm = () => {
                                     <input type="text" value={formDetails.password} placeholder= "Password" onChange={(e) => onFormUpdate('password', e.target.value)} />
                                 </Col>
                                 <Col>
+                                    <p className="hyperlink-txt">Already have an account? <a href="/login">Click here to login.</a>
+                                    </p>
                                     <button type="submit"><span>{buttontext}</span></button>
                                 </Col>
                                 {

@@ -155,6 +155,16 @@ span.navbar-text {
 .social-icon a:hover img {
 	filter: brightness(0) saturate(100%) invert(0%) sepia(7%) saturate(98%) hue-rotate(346deg) brightness(95%) contrast(86%);
 }
+.hyperlink-txt a{
+  color: #ffffff !important;
+  text-decoration: none;
+}
+
+.hyperlink-txt a:hover{
+  color: #B02F77 !important;
+  text-decoration: none;
+}
+
 #loginbtn{
   font-weight: 400;
   color: #B02F77 !important;

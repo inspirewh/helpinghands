@@ -36,6 +36,7 @@ export const LoginForm = () => {
                                     <input type="text" value={formDetails.password} placeholder= "Password" onChange={(e) => onFormUpdate('password', e.target.value)} />
                                 </Col>
                                 <Col>
+                                    <p className="hyperlink-txt">Dont' have an account? <a href="/signup">Click here to signup.</a></p>    
                                     <button type="submit"><span>{buttontext}</span></button>
                                 </Col>
                                 {
