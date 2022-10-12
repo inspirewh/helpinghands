@@ -8,6 +8,8 @@ import Donation from './pages/Donation';
 import Signup from './pages/Signup';
 import Login from './pages/Login';
 import Contact from './pages/Contact';
+import Dashboard from './pages/user/Dashboard';
+import DonationForm from './pages/user/DonationForm';
 
  
 function App() {
@@ -35,6 +37,15 @@ function App() {
     {
       path: "/contact",
       element: <Contact/>,
+    },
+    {
+      path: "/dashboard",
+      element: <Dashboard/>,
+    }
+    ,
+    {
+      path: "/donate",
+      element: <DonationForm/>,
     }
   ]);
 
