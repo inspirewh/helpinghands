@@ -1,27 +1,31 @@
-import { useState }from "react";
+import React, { useRef, useState } from 'react';
+import emailjs from 'emailjs-com';
+import { validateEmail } from '../../src/utils/validateEmail.js';
+// import BaseLayout from "../layouts/BaseLayout";
 import { Col, Container, Row } from "react-bootstrap";
 
 export const Chat = () => {
-    //the initial default state
-    const formInitialDetails = {
-        firstName: '',
-        lastName: '',
-        email: '',
-        phone: '',
-        message: '',
-    }
-    //A state that stores the inputdetails
-    const [formDetails, setFormDetails] = useState(formInitialDetails);
-    //submit button (default = send when user preses send "change text to "sending"  )
-    const [buttontext] = useState('Send')
-    const [status] = useState({});
-    //updates the form details state so it leaves the rest form details intact and only updated the field indicated 
-    const onFormUpdate = (category, value) => {
-        setFormDetails({
-          ...formDetails,
-          [category]: value
-        })
-    }
+    const form = useRef();
+    const [email, setEmail] = useState('');
+
+    const sendEmail = (e) => {
+      e.preventDefault();
+
+      // 
+      const isEmailValid = validateEmail(email);
+
+      if(!isEmailValid){
+        return alert("incorrect email, please try again!");
+      }
+      
+      emailjs.sendForm('service_z4w7u7f', 'template_gio5517', form.current, '9OsoxDn8wiD5lJeLU')
+        .then((result) => {
+            console.log(result.text);
+        }, (error) => {
+            console.log(error.text);
+        });
+        alert("email sent!, I will be in touch :)");
+    };
     
     return (
         <section className="contact" id="connect">
@@ -30,30 +34,24 @@ export const Chat = () => {
                     <Col md={6}>
                         <h2>Get in touch</h2>
                         <p>Want to know more about Helping Hands. Or want to get involved more and support those in need? Get in touch by completing the form below and we'll be in touch.</p>
-                        <form>
+                        <form ref={form} onSubmit={sendEmail}>
                             <Row>
                                 <Col sm={6} className="px-1">
-                                    <input type="text" value={formDetails.firstName} placeholder= "First Name" onChange={(e) => onFormUpdate('firstName', e.target.value)} />
+                                    <input type="text" name="user_name" placeholder= "First Name" required= 'true' />
                                 </Col>
                                 <Col sm={6} className="px-1">
-                                    <input type="text" value={formDetails.lastName} placeholder= "Last Name" onChange={(e) => onFormUpdate('lastName', e.target.value)} />
+                                    <input type="text" placeholder= "Last Name" required= 'true' />
                                 </Col>
                                 <Col sm={6} className="px-1">
-                                    <input type="email" value={formDetails.email} placeholder= "Email Address" onChange={(e) => onFormUpdate('email', e.target.value)} />
+                                    <input type="email" name="user_email" placeholder= "Email Address" required= 'true' onInput={(e) => setEmail(e.target.value)} value={email} />
                                 </Col>
                                 <Col sm={6} className="px-1">
-                                    <input type="tel" value={formDetails.phone} placeholder= "Phone" onChange={(e) => onFormUpdate('phone', e.target.value)} />
+                                    <input type="tel" placeholder= "Phone" required= 'true' />
                                 </Col>
                                 <Col>
-                                    <textarea row="6" value={formDetails.message} placeholder= "Message" onChange={(e) => onFormUpdate('message', e.target.value)}/>
-                                    <button type="submit"><span>{buttontext}</span></button>
+                                    <textarea row="6" name="user_message" placeholder= "Message" required= 'true' />
+                                    <button type="submit" value="Send" placeholder='Enter Your Message Here' required= 'true' >Send</button>
                                 </Col>
-                                {
-                                    status.message &&
-                                    <Col>
-                                    <p className={status.success === false ? "danger" : "success"}>{status.message}</p>
-                                    </Col>
-                                }
                             </Row>
                         </form>
                     </Col>

@@ -1,9 +1,10 @@
 const Donation = require("../models/Donation");
 const mongoose = require("mongoose");
 const connection = require("../config/connection"); //get your mongoose string
+const User = require("../models/User");
 //create your array. i inserted only 1 object here
-const donation = [   
-  new Donation({
+const donations = [   
+  {
     // string
     item_name: "testitem1",
 
@@ -60,7 +61,7 @@ const donation = [
     // boolean
     item_status_sent: true,
   },
-  ),]
+]
 //connect mongoose
 mongoose
   .connect(String(connection.db), { useNewUrlParser: true })
@@ -73,11 +74,48 @@ mongoose
   });
 //save your data. this is an async operation
 //after you make sure you seeded all the products, disconnect automatically
-donation.map(async (p, index) => {
-  await p.save((err, result) => {
-    if (index === donation.length - 1) {
+donations.map(async (don, index) => {
+  const model = new Donation(don);
+  await model.save((err, result) => {
+
+    // grab a random user
+    User.findOneAndUpdate()
+    // add model._id
+
+    // $addToSet
+
+    if (index === donations.length - 1) {
       console.log("DONE!");
       mongoose.disconnect();
     }
   });
 });
+
+module.exports = function seedDonations(){
+  // +.......
+
+  return seededDonations
+}
+
+
+
+// // index.js in seeds folder
+// const users = seedUsers();
+
+// const dons = seedDonations();
+
+// for (let index = 0; index < dons.length; index++) {
+//   const don = dons[index];
+  
+
+//   // get a random user from 'users'
+//   const randomUser = ....
+
+
+
+//   User.findOneByIdAndUpdate(randomUser._id, {
+//     $addToSet: {
+//       donations_ids: don._id
+//     }
+//   })
+// }
