@@ -21,7 +21,7 @@ export const LoginForm = () => {
     }
     
     return (
-        <section className="signup" id="connect">
+        <section className="login" id="connect">
             <Container>
                 <Row className="justify-content-center align-items-center">
                     <Col md={6}>

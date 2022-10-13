@@ -636,6 +636,92 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 .signup form button:hover::before {
   width: 100%;
 }
+/************ signupform Css ************/
+.login {
+  margin-top: 0;
+  padding: 260px 0 100px 0;
+  background-image: url('./assets/img/helpinghands-bg.png');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.login img {
+  width: 92%;
+}
+.login h2 {
+  font-size: 45px;
+	font-weight: 700;
+  margin-bottom: 10px;
+}
+.login p {
+  color: #ffffff;
+  font-size: 19px;
+  letter-spacing: 0.8px;
+  line-height: 1.5em;
+  margin: 14px 0 20px 0;
+}
+.login form input, .login form textarea {
+  width: 100%;
+  background: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 20px;
+  color: #fff;
+  margin: 0 0 8px 0;
+  padding: 18px 26px;
+  font-weight: 500;
+  font-size: 18px;
+  letter-spacing: 0.8px;
+  transition: 0.3s ease-in-out;
+}
+.login form input:focus, .login form textarea:focus {
+  background: rgba(255, 255, 255, 1);
+  color: #121212;
+}
+.login form input::placeholder, .login form textarea::placeholder {
+  font-size: 16px;
+  font-weight: 400;
+  color: #535353;
+}
+.login form input:focus::placeholder, .login form textarea:focus::placeholder {
+  color: #121212;
+  opacity: 0.8;
+}
+.login form button {
+  font-weight: 700;
+  color: #000;
+  background-color: #fff;
+  padding: 14px 48px;
+  font-size: 18px;
+  margin: 25px 0 500px 0;
+  border-radius: 0;
+  position: relative;
+  transition: 0.3s ease-in-out;
+}
+.login form button span {
+  z-index: 1;
+  position: relative;
+}
+.login form button:hover {
+  color: #fff;
+}
+.login form button::before {
+  content: "";
+  background: #B02F77;
+  width: 0;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  transition: 0.3s ease-in-out;
+}
+.login form button:hover::before {
+  width: 100%;
+}
+.hyperlink-txt{
+  margin-top: 0px!important;
+  font-size: 16px !important;
+}
 /************ contact Css ************/
 .contact {
   margin-top: 0;
