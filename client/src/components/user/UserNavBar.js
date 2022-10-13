@@ -30,7 +30,7 @@ export const UserNavBar = () => {
     
     
     return (
-        <Navbar expand="lg" className={scrolled ? "scrolled": ""}>
+        <Navbar expand="lg" id="userNav" className={scrolled ? "scrolled": ""}>
             <Container>
                 <Navbar.Brand href="/">
                     <img src={logo} alt="logo" />
@@ -39,8 +39,8 @@ export const UserNavBar = () => {
                 <span className="navbar-toggler-icon"></span> </Navbar.Toggle>
                 <Navbar.Collapse id="basic-navbar-nav">
                 <Nav className="me-auto">
-                <Link to="/about" className={activeLink === 'about' ? 'active navbar-link' : 'navbar-link'} onClick={() => onUpdateActiveLink('about')}>Get Donating</Link>
-                <Link to="/" className={activeLink === 'home' ? 'active navbar-link' : 'navbar-link'} onClick={() => onUpdateActiveLink('home')}>Recent Donations</Link>
+                <Link to="/donate" className={activeLink === 'donate' ? 'active navbar-link' : 'navbar-link'} onClick={() => onUpdateActiveLink('about')}>Get Donating</Link>
+                <Link to="/dashboard" className={activeLink === 'home' ? 'active navbar-link' : 'navbar-link'} onClick={() => onUpdateActiveLink('home')}>Recent Donations</Link>
                 <Link to="/donation-feed" className={activeLink === 'donationfeed' ? 'active navbar-link' : 'navbar-link'} onClick={() => onUpdateActiveLink('donationfeed')}>Donation Feed</Link>
                 <Link to="/contact" className={activeLink === 'contact' ? 'active navbar-link' : 'navbar-link'} onClick={() => onUpdateActiveLink('resume')}>Get in touch</Link>
 

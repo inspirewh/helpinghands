@@ -24,37 +24,35 @@ export const Donate = () => {
     }
     
     return (
-        <section className="contact" id="connect">
+        <section className="donationForm" id="donate">
             <Container>
-                <Row className="justify-content-center align-items-center">
-                    <Col md={6}>
-                        <h2>Get in touch</h2>
+                <Row className="justify-content-center align-items-center" id= "inputForm">
+                    <Col className="inputForm" md={6}>
+                        <h2>Let's Get Donating</h2>
                         <p>Want to know more about Helping Hands. Or want to get involved more and support those in need? Get in touch by completing the form below and we'll be in touch.</p>
                         <form>
                             <Row>
-                                <Col sm={6} className="px-1">
-                                    <input type="text" value={formDetails.firstName} placeholder= "First Name" onChange={(e) => onFormUpdate('firstName', e.target.value)} />
-                                </Col>
-                                <Col sm={6} className="px-1">
-                                    <input type="text" value={formDetails.lastName} placeholder= "Last Name" onChange={(e) => onFormUpdate('lastName', e.target.value)} />
-                                </Col>
-                                <Col sm={6} className="px-1">
-                                    <input type="email" value={formDetails.email} placeholder= "Email Address" onChange={(e) => onFormUpdate('email', e.target.value)} />
-                                </Col>
-                                <Col sm={6} className="px-1">
-                                    <input type="tel" value={formDetails.phone} placeholder= "Phone" onChange={(e) => onFormUpdate('phone', e.target.value)} />
-                                </Col>
                                 <Col>
-                                    <textarea row="6" value={formDetails.message} placeholder= "Message" onChange={(e) => onFormUpdate('message', e.target.value)}/>
+                                <input id="imageUpload" type= 'file' value={formDetails.imgupload} placeholder= "Add photos of your donation" onChange={(e) => onFormUpdate('imgUpload', e.target.value)}></input>
+                                </Col>
+                            </Row>
+                            <Row> 
+                                <Col sm={6} className="px-1">
+                                    <input type="text" value={formDetails.title} placeholder= "Title" onChange={(e) => onFormUpdate('title', e.target.value)} />
+                                </Col>
+                            </Row>
+                            <Row>
+                                <Col>
+                                    <textarea row="6" value={formDetails.message} placeholder= "Description" onChange={(e) => onFormUpdate('description', e.target.value)}/>
                                     <button type="submit"><span>{buttontext}</span></button>
                                 </Col>
+                            </Row>
                                 {
                                     status.message &&
                                     <Col>
                                     <p className={status.success === false ? "danger" : "success"}>{status.message}</p>
                                     </Col>
                                 }
-                            </Row>
                         </form>
                     </Col>
                 </Row>
