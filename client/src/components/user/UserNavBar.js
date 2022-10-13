@@ -42,7 +42,7 @@ export const UserNavBar = () => {
                 <Link to="/donate" className={activeLink === 'donate' ? 'active navbar-link' : 'navbar-link'} onClick={() => onUpdateActiveLink('about')}>Get Donating</Link>
                 <Link to="/dashboard" className={activeLink === 'home' ? 'active navbar-link' : 'navbar-link'} onClick={() => onUpdateActiveLink('home')}>Recent Donations</Link>
                 <Link to="/donation-feed" className={activeLink === 'donationfeed' ? 'active navbar-link' : 'navbar-link'} onClick={() => onUpdateActiveLink('donationfeed')}>Donation Feed</Link>
-                <Link to="/contact" className={activeLink === 'contact' ? 'active navbar-link' : 'navbar-link'} onClick={() => onUpdateActiveLink('resume')}>Get in touch</Link>
+                <Link to="/connect" className={activeLink === 'contact' ? 'active navbar-link' : 'navbar-link'} onClick={() => onUpdateActiveLink('resume')}>Get in touch</Link>
 
 
                 </Nav>

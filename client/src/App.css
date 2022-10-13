@@ -851,7 +851,12 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   padding: 0px 0;
   background-color: #ffffff;
 }
-
+.inputForm2{
+  background-color: #fffFFF;
+  width: 75%;
+  padding-right: calc(var(--bs-gutter-x) * 2.5) !important;
+  padding-left: calc(var(--bs-gutter-x) * 2.5) !important;
+}
 .userContact {
   margin-top: 0;
   padding: 200px 0 100px 0;
@@ -875,7 +880,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 .userContact form input, .userContact form textarea {
   width: 100%;
   background: #fff;
-  border: 1px solid rgba(255, 255, 255, 0.5);
+  border: 1px solid #535353;
   border-radius: 20px;
   color: #fff;
   margin: 0 0 8px 0;
@@ -900,8 +905,8 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 }
 .userContact form button {
   font-weight: 700;
-  color: #000;
-  background-color: #fff;
+  color: #ffffff;
+  background-color: #B02F77;
   padding: 14px 48px;
   font-size: 18px;
   margin: 25px 0 500px 0;
@@ -918,7 +923,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 }
 .userContact form button::before {
   content: "";
-  background: #B02F77;
+  background: #000000;
   width: 0;
   height: 100%;
   position: absolute;
@@ -930,6 +935,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 .userContact form button:hover::before {
   width: 100%;
 }
+
 
 /************ Donation Form Css ************/
 

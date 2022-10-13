@@ -27,7 +27,7 @@ export const UserChat = () => {
         <section className="userContact" id="connect">
             <Container>
                 <Row className="justify-content-center align-items-center">
-                    <Col md={6}>
+                    <Col md={6} className="inputForm2">
                         <h2>Get in touch</h2>
                         <p>Want to know more about Helping Hands. Or want to get involved more and support those in need? Get in touch by completing the form below and we'll be in touch.</p>
                         <form>
