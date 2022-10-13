@@ -852,6 +852,87 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   background-color: #ffffff;
 }
 
+.userContact {
+  margin-top: 0;
+  padding: 200px 0 100px 0;
+  background-color: #ebebeb;
+  padding-bottom: 200px !important;
+}
+
+.userContact h2 {
+  color: #535353;
+  font-size: 45px;
+	font-weight: 700;
+  margin-bottom: 10px;
+}
+.userContact p {
+  color: #535353;
+  font-size: 19px;
+  letter-spacing: 0.8px;
+  line-height: 1.5em;
+  margin: 14px 0 20px 0;
+}
+.userContact form input, .userContact form textarea {
+  width: 100%;
+  background: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 20px;
+  color: #fff;
+  margin: 0 0 8px 0;
+  padding: 18px 26px;
+  font-weight: 500;
+  font-size: 18px;
+  letter-spacing: 0.8px;
+  transition: 0.3s ease-in-out;
+}
+.userContact form input:focus, .userContact form textarea:focus {
+  background: rgba(255, 255, 255, 1);
+  color: #121212;
+}
+.userContact form input::placeholder, .userContact form textarea::placeholder {
+  font-size: 16px;
+  font-weight: 400;
+  color: #535353;
+}
+.userContact form input:focus::placeholder, .userContact form textarea:focus::placeholder {
+  color: #121212;
+  opacity: 0.8;
+}
+.userContact form button {
+  font-weight: 700;
+  color: #000;
+  background-color: #fff;
+  padding: 14px 48px;
+  font-size: 18px;
+  margin: 25px 0 500px 0;
+  border-radius: 0;
+  position: relative;
+  transition: 0.3s ease-in-out;
+}
+.userContact form button span {
+  z-index: 1;
+  position: relative;
+}
+.userContact form button:hover {
+  color: #fff;
+}
+.userContact form button::before {
+  content: "";
+  background: #B02F77;
+  width: 0;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  transition: 0.3s ease-in-out;
+}
+.userContact form button:hover::before {
+  width: 100%;
+}
+
+/************ Donation Form Css ************/
+
 .inputForm{
   background-color: #fffFFF;
   width: 75%;

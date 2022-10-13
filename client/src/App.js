@@ -10,6 +10,7 @@ import Login from './pages/Login';
 import Contact from './pages/Contact';
 import Dashboard from './pages/user/Dashboard';
 import DonationForm from './pages/user/DonationForm';
+import UserConnect from './pages/user/UserContact';
 
  
 function App() {
@@ -41,11 +42,14 @@ function App() {
     {
       path: "/dashboard",
       element: <Dashboard/>,
-    }
-    ,
+    },
     {
       path: "/donate",
       element: <DonationForm/>,
+    },
+    {
+      path: "/connect",
+      element: <UserConnect/>,
     }
   ]);
 
