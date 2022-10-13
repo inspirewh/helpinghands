@@ -1,6 +1,8 @@
 const { Error } = require('mongoose');
 const User = require('../models/User');
+const { signToken } = require('../utils/auth');
 
+//to donate must be logged in donating 
 function checkIfLoggedIn (context){
     if(!context.user){
       throw new Error('Not logged in')
@@ -19,13 +21,23 @@ const resolvers = {
     },
 
     // get all users 
-    // users: [User]
     users: async() => {   
         return User.find({}).populate('Donation') //is find {} an issue? 
-    }
-    // TODO: add donations / donation 
-        // Donations(username: String): [User]
-        // Donation(Donation_id: ID!): Donation
+    },
+
+    Donation: async ( {username} ) => {
+        // TODO: get user donation for personal donation feed 
+
+    },
+
+    // Donation(Donation_id: ID!): Donation
+    Donations: async () => {
+      //TODO: get donation for donation feed 
+      
+    },
+
+
+    
     },
 
   //TODO: refactor code below
