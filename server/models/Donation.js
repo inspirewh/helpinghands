@@ -1,8 +1,9 @@
 const { Schema, model } = require('mongoose');
+const mongoose = require('mongoose');
 const User = require('./User');
 
 
-const donationSchema = new Schema({
+const donationSchema = new mongoose.Schema({
     item_name: {
         type: String,
         required: true,
@@ -17,7 +18,6 @@ const donationSchema = new Schema({
     },
     item_recieved: {
         type: Boolean,
-        default: Date.now,
     },
     item_imageUrl: {
         type: String,
@@ -27,14 +27,15 @@ const donationSchema = new Schema({
         type: Number,
         required: false,
     },
-    item_status: {
+    item_status_sent: {
         type: String,
         required: true,
+        default: Date.now,
     }
 },{
     timestamps: true,
 });
 
-const donation = model('donation', donationSchema);
+const Donation = mongoose.model('Donation', donationSchema);
 
-module.exports = donation;
+module.exports = Donation;
