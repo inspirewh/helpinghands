@@ -1,8 +1,9 @@
 const { Error } = require('mongoose');
+const Donation = require('../models/Donation');
 const User = require('../models/User');
 const { signToken } = require('../utils/auth');
 
-//to donate must be logged in donating 
+//to donate must be logged in donating -- currently not using
 function checkIfLoggedIn (context){
     if(!context.user){
       throw new Error('Not logged in')
@@ -10,9 +11,9 @@ function checkIfLoggedIn (context){
   }
 
 const resolvers = {
-    Query: {
+  Query: {
     //get a single user 
-    user: async(parent, { username }) => {
+    singleUser: async(parent, { username }) => {
         if(!username){
             return Error('No user with this id');
         }else {
@@ -22,59 +23,61 @@ const resolvers = {
 
     // get all users 
     users: async() => {   
-        return User.find({}).populate('Donation') //is find {} an issue? 
+      const user = User.find({}).populate('Donations') //is find {} an issue? 
+      return user;
     },
 
-    Donation: async ( {username} ) => {
-        // TODO: get user donation for personal donation feed 
-
+    //get personal user donations
+    singleDonation: async (parent, { username }, context) => {
+      if(!username){
+        return Error('No user with this id');
+      }else {
+        const userData = await User.findOne({donation_ids}).select('-_v -password');
+        return userData;
+      }
     },
-
-    // Donation(Donation_id: ID!): Donation
-    Donations: async () => {
-      //TODO: get donation for donation feed 
-      
-    },
-
-
     
+    //get donations for donation feed 
+    Donations: async () => {
+      const userDonations = await User.find({donation_ids});
+      return userDonations
     },
+    
+  },
 
   //TODO: refactor code below
     Mutation: {
+
       createUser: async (parent, {username, email, password }, context ) => {
         const user = await User.create({
           username, email, password
         });
-  
+
         if (!user){
           throw new Error('Something went wrong')
         }
         const token = signToken(user);
         return (token, user)
       },
+
       login: async (parent, { email, password }) => {
       const user = await User.findOne({email: email});
         if (!user) {
-          throw new Error('User or Password is incorrect');
+          throw new Error('Something went wrong!');
         }
   
       const correctPw = await user.isCorrectPassword(password); // in user model isCorrectPAssword 
         if (!correctPw) {
           throw new Error('User or Password is incorrect')
         }
-  
+
       const token = signToken(user);
       return ({ token, user }); //if you look in type def we are returning an Auth object, here is that auth object, token and user 
       },
   
-      addDonation: async () => {
-        
+      addDonation: async (parent, {item_name, item_description, item_recieved, item_imageUrl, item_quantity, item_status}) => {
+        return await Donation.create({item_name, item_description, item_recieved, item_imageUrl, item_quantity, item_status});
       },
-
-      getSingleUser: async() => {
-
-      }
     },
   };
   

@@ -25,16 +25,15 @@ const typeDefs = gql`
 
   type Query {
     users: [User]
-    user(username: String!): User
+    singleUser(username: String!): User
     Donations(username: String): [User]
-    Donation(Donation_id: ID!): Donation
+    singleDonation(Donation_id: ID!): Donation
   }
 
   type Mutation {
     createUser(username: String!, email: String!, password: String!): Auth
     login(email: String!, password: String!): Auth
     addDonation(DonationText: String!): Donation
-    getSingleUser(Donation_id: ID!): Donation
   }
 `;
 
