@@ -1,7 +1,5 @@
 const { Schema, model } = require('mongoose');
 const mongoose = require('mongoose');
-const User = require('./User');
-
 
 const donationSchema = new mongoose.Schema({
     item_name: {
