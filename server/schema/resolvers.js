@@ -13,41 +13,45 @@ function checkIfLoggedIn (context){
 const resolvers = {
   Query: {
     //get a single user 
+    //need to test
     singleUser: async(parent, { username }) => {
         if(!username){
-            return Error('No user with this id');
+            return Error('username does not exist');
         }else {
-            return User.findOne({ username: username }).populate('Donation'); //or is it donation_ids 
+            return User.findOne({ username: username }); 
         }
     },
 
     // get all users 
+    //need to test
     users: async() => {   
-      const user = User.find({}).populate('Donations') //is find {} an issue? 
+      const user = User.find({}).populate('Donations') 
       return user;
     },
 
     //get personal user donations
+    //need to test
     singleDonation: async (parent, { username }, context) => {
       if(!username){
         return Error('No user with this id');
       }else {
-        const userData = await User.findOne({donation_ids}).select('-_v -password');
+        const userData = await User.findOne('Donation').select('-_v -password');
         return userData;
       }
     },
     
     //get donations for donation feed 
+    //need to test
     Donations: async () => {
-      const userDonations = await User.find({donation_ids});
+      const userDonations = await User.find('Donation');
       return userDonations
     },
     
   },
 
-  //TODO: refactor code below
     Mutation: {
 
+      //createUser TESTED and working
       createUser: async (parent, {username, email, password }, context ) => {
         const user = await User.create({
           username, email, password
@@ -57,9 +61,10 @@ const resolvers = {
           throw new Error('Something went wrong')
         }
         const token = signToken(user);
-        return (token, user)
-      },
-
+        console.log({token}, {user});
+        return {token, user};
+      }, 
+      //login TESTED and working
       login: async (parent, { email, password }) => {
       const user = await User.findOne({email: email});
         if (!user) {
@@ -74,7 +79,7 @@ const resolvers = {
       const token = signToken(user);
       return ({ token, user }); //if you look in type def we are returning an Auth object, here is that auth object, token and user 
       },
-  
+      // Need to test
       addDonation: async (parent, {item_name, item_description, item_recieved, item_imageUrl, item_quantity, item_status}) => {
         return await Donation.create({item_name, item_description, item_recieved, item_imageUrl, item_quantity, item_status});
       },
