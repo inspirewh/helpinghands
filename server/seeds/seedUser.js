@@ -1,9 +1,10 @@
 const User = require("../models/User");
 const mongoose = require("mongoose");
 const connection = require("../config/connection"); //get your mongoose string
+const Donation = require("../models/Donation");
 //create your array. i inserted only 1 object here
-const user = [
-  new User({
+const users = [
+  {
     // string
     username: "testUser1",
 
@@ -13,7 +14,6 @@ const user = [
     // boolean
     password: "abcd1234",
 
-    donation_ids: `// TODO: not sure how te ref :(`,
   },
   {
     // string
@@ -25,7 +25,6 @@ const user = [
     // boolean
     password: "1234abcd",
 
-    donation_ids: `// TODO: not sure how te ref :(`,
   },
   {
     // string
@@ -37,26 +36,36 @@ const user = [
     // boolean
     password: "hopethisworks123",
 
-    donation_ids: `// TODO: not sure how te ref :(`,
   }
-  ),]
-//connect mongoose
-mongoose
-  .connect(String(connection.db), { useNewUrlParser: true })
-  .catch(err => {
-    console.log(err.stack);
-    process.exit(1);
-  })
-  .then(() => {
-    console.log("connected to db in development environment");
-  });
-//save your data. this is an async operation
-//after you make sure you seeded the User, disconnect automatically
-user.map(async (p, index) => {
-  await p.save((err, result) => {
-    if (index === user.length - 1) {
-      console.log("DONE!");
-      mongoose.disconnect();
-    }
-  });
-});
+]
+
+
+async function seedUsers(){
+  
+
+  return await User.insertMany(users);
+  mongoose
+    .connect(String(connection.db), { useNewUrlParser: true })
+    .catch(err => {
+      console.log(err.stack);
+      process.exit(1);
+    })
+    .then(() => {
+      console.log("connected to db in development environment");
+      //save your data. this is an async operation
+      //after you make sure you seeded the User, disconnect automatically
+      users.map(async (p, index) => {
+        await p.save((err, result) => {
+          if (index === users.length - 1) {
+            console.log("DONE!");
+            mongoose.disconnect();
+          }
+        });
+      });
+    });
+  // const userSeeds = users;
+  
+  //connect mongoose
+}
+
+module.exports = seedUsers;

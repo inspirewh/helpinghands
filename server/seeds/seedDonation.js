@@ -2,7 +2,9 @@ const Donation = require("../models/Donation");
 const mongoose = require("mongoose");
 const connection = require("../config/connection"); //get your mongoose string
 const User = require("../models/User");
-//create your array. i inserted only 1 object here
+
+
+//create your array of donation seeds
 const donations = [   
   {
     // string
@@ -62,60 +64,71 @@ const donations = [
     item_status_sent: true,
   },
 ]
-//connect mongoose
-mongoose
-  .connect(String(connection.db), { useNewUrlParser: true })
-  .catch(err => {
-    console.log(err.stack);
-    process.exit(1);
-  })
-  .then(() => {
-    console.log("connected to db in development environment");
-  });
-//save your data. this is an async operation
-//after you make sure you seeded all the products, disconnect automatically
-donations.map(async (don, index) => {
-  const model = new Donation(don);
-  await model.save((err, result) => {
 
-    // grab a random user
-    User.findOneAndUpdate()
-    // add model._id
-
-    // $addToSet
-
-    if (index === donations.length - 1) {
-      console.log("DONE!");
-      mongoose.disconnect();
-    }
-  });
-});
-
-module.exports = function seedDonations(){
-  // +.......
-
-  return seededDonations
-}
-
-
-
-// // index.js in seeds folder
-// const users = seedUsers();
-
-// const dons = seedDonations();
-
-// for (let index = 0; index < dons.length; index++) {
-//   const don = dons[index];
+async function seedDonation(){
   
 
-//   // get a random user from 'users'
-//   const randomUser = ....
+  return await Donation.insertMany(donations);
+
+  //connect mongoose
+  mongoose
+    .connect(String(connection.db), { useNewUrlParser: true })
+    .catch(err => {
+      console.log(err.stack);
+      process.exit(1);
+    })
+    .then(() => {
+      console.log("connected to db in development environment");
+    });
+  //save your data. this is an async operation
+  //after you make sure you seeded all the products, disconnect automatically
+  donations.map(async (don, index) => {
+    const model = new Donation(don);
+    await model.save((err, result) => {
+  
+      
+      if (index === donations.length - 1) {
+        console.log("DONE!");
+        mongoose.disconnect();
+      }
+    });
+  });
+};
+
+module.exports = seedDonation;
 
 
+//TODO: below is useful pseudo code
+// // grab a random user
+// User.findOneAndUpdate()
+// // add model._id
 
-//   User.findOneByIdAndUpdate(randomUser._id, {
-//     $addToSet: {
-//       donations_ids: don._id
-//     }
-//   })
+// // $addToSet
+// module.exports = function seedDonations(){
+//   // +.......
+
+//   return seededDonations
 // }
+
+
+
+// // // index.js in seeds folder
+// // const users = seedUsers();
+
+// // const dons = seedDonations();
+
+// // for (let index = 0; index < dons.length; index++) {
+// //   const don = dons[index];
+  
+
+// //   // get a random user from 'users'
+// //   const randomUser = ....
+
+
+
+// //   User.findOneByIdAndUpdate(randomUser._id, {
+// //     $addToSet: {
+// //       donations_ids: don._id
+// //     }
+// //   })
+// // }

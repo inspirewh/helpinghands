@@ -1,20 +1,51 @@
-// index.js in seeds folder
-const users = seedUsers();
+const db = require('../config/connection');
+const {User, Donation} = require("../models");
+const seedDonation = require('./seedDonation');
+const seedUsers = require('./seedUser');
 
-const dons = seedDonations();
 
-for (let index = 0; index < dons.length; index++) {
-  const don = dons[index];
+db.on('error', (err) => err);
+
+
+db.once('open', async () => {
+  console.log("connected to db")
+
+  // clear db user + donations data
+  await User.deleteMany({});
+  await Donation.deleteMany({});
+
+  const users = await seedUsers();
+
+  const donations = await seedDonation()
   
 
-  // get a random user from 'users'
-  const randomUser = ....
+  for (let index = 0; index < donations.length; index++) {
+    const don = donations[index];
+
+    const randomUser = users[Math.floor(Math.random() * users.length)];
+
+    console.log({randomUser});
+    await User.findOneAndUpdate({
+      _id: randomUser._id,
+    },{
+      $addToSet: {
+        donation_ids: don._id
+      }
+    })
+  }
+  console.log('done seeding');
+  process.exit(0);
+});
+  
+
+//   // get a random user from 'users'
+//   const randomUser = "";
 
 
-
-  User.findOneByIdAndUpdate(randomUser._id, {
-    $addToSet: {
-      donations_ids: don._id
-    }
-  })
-}
+//   //add donation id to user
+//   User.findOneByIdAndUpdate(randomUser._id, {
+//     $addToSet: {
+//       donations_ids: don._id
+//     }
+//   })
+// }
