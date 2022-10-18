@@ -2,7 +2,7 @@ const User = require("../models/User");
 const mongoose = require("mongoose");
 const connection = require("../config/connection"); //get your mongoose string
 const Donation = require("../models/Donation");
-//create your array. i inserted only 1 object here
+//create your array of seeds
 const users = [
   {
     // string
