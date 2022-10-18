@@ -1,9 +1,9 @@
 import { useState, useEffect } from "react";
 import { Col, Container, Row } from "react-bootstrap";
-import { useMutation } from '@apollo/react-hooks';
 import { ADD_USER } from '../utils/mutations';
 import Auth from '../utils/auth'
 import '../App.css';
+import { useMutation } from '@apollo/client';
 
 export const SignupForm = () => {
     //the initial default state
@@ -32,10 +32,10 @@ export const SignupForm = () => {
 
         try {
             const { data } = await addUser({
-                variables: { ...formInitialValues }
+                variables: { ...formValues }
             });
 
-            Auth.login(data.addUser.token);
+            Auth.login(data.createUser.token);
         } catch (e) {
             console.error(e);
         }

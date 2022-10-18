@@ -1,5 +1,12 @@
 //import logo from './logo.svg';
-import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import { Route, BrowserRouter as Router, Routes } from 'react-router-dom';
+import {
+  ApolloClient,
+  InMemoryCache,
+  ApolloProvider,
+  createHttpLink,
+} from '@apollo/client';
+import { setContext } from '@apollo/client/link/context';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Home from './pages/Home';
@@ -11,56 +18,74 @@ import Contact from './pages/Contact';
 import Dashboard from './pages/user/Dashboard';
 import DonationForm from './pages/user/DonationForm';
 import UserConnect from './pages/user/UserContact';
+import { Navbar } from 'react-bootstrap';
 
+const httpLink = createHttpLink({
+  uri: '/graphql',
+});
+
+const authLink = setContext((_, { headers }) => {
+
+  const token = localStorage.getItem('id_token');
+
+  return {
+    headers: {
+      ...headers,
+      authorization: token ? `Bearer ${token}` : '',
+    },
+  };
+});
+
+const client = new ApolloClient({
+  link: authLink.concat(httpLink),
+  cache: new InMemoryCache(),
+});
  
 function App() {
-  const router = createBrowserRouter([
-    {
-      path: "/",
-      element: <Home/>,
-    },
-    {
-      path: "/about",
-      element: <About/>,
-    },
-    {
-      path: "/donation-feed",
-      element: <Donation/>,
-    },
-    {
-      path: "/signup",
-      element: <Signup/>,
-    },
-    {
-      path: "/login",
-      element: <Login/>,
-    },
-    {
-      path: "/contact",
-      element: <Contact/>,
-    },
-    {
-      path: "/dashboard",
-      element: <Dashboard/>,
-    },
-    {
-      path: "/donate",
-      element: <DonationForm/>,
-    },
-    {
-      path: "/connect",
-      element: <UserConnect/>,
-    }
-  ]);
-
   return (
-    <div>
-      
-      <RouterProvider router={router}/>
-
-
-
-    </div>
+    <ApolloProvider client={client}>
+      <Router>
+          <Navbar />
+          <Routes>
+            <Route 
+              path= "/" 
+              element={<Home/>} 
+              />
+            <Route 
+              path= "/about" 
+              element={<About/>} 
+              />
+            <Route 
+              path= "/donation-feed" 
+              element={<Donation/>}
+              />
+            <Route 
+              path= "/signup" 
+              element={<Signup/>} 
+              />
+            <Route 
+              path= "/login" 
+              element={<Login/>} 
+              />
+            <Route 
+              path= "/contact" 
+              element={<Contact/>} 
+              />
+            <Route 
+              path= "/dashboard" 
+              element={<Dashboard/>} 
+              />
+            <Route 
+              path= "/donate" 
+              element={<DonationForm/>} 
+              />
+            <Route 
+              path= "/connect" 
+              element={<UserConnect/>} 
+              />
+        </Routes>
+      </Router>
+    </ApolloProvider>
   );
 }
 
