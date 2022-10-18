@@ -583,7 +583,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   background: #fff;
   border: 1px solid rgba(255, 255, 255, 0.5);
   border-radius: 20px;
-  color: #fff;
+  color: #535353;
   margin: 0 0 8px 0;
   padding: 18px 26px;
   font-weight: 500;
@@ -636,6 +636,16 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 .signup form button:hover::before {
   width: 100%;
 }
+
+.validate-text {
+  font-size: .875em !important;
+  color: red !important;
+  font-style: italic;
+  margin-top: 0.25rem !important;
+  margin-left: 0.25rem !important;
+}
+
+
 /************ signupform Css ************/
 .login {
   margin-top: 0;
@@ -665,7 +675,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   background: #fff;
   border: 1px solid rgba(255, 255, 255, 0.5);
   border-radius: 20px;
-  color: #fff;
+  color: #535353;
   margin: 0 0 8px 0;
   padding: 18px 26px;
   font-weight: 500;
@@ -751,7 +761,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   background: #fff;
   border: 1px solid rgba(255, 255, 255, 0.5);
   border-radius: 20px;
-  color: #fff;
+  color: #535353;
   margin: 0 0 8px 0;
   padding: 18px 26px;
   font-weight: 500;
@@ -968,7 +978,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   background: #fff;
   border: 1px solid #535353;
   border-radius: 20px;
-  color: #fff;
+  color: #535353;
   margin: 0 0 8px 0;
   padding: 18px 26px;
   font-weight: 500;
@@ -1060,7 +1070,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   background: #fff;
   border: 1px solid #535353;
   border-radius: 20px;
-  color: #fff;
+  color: #535353;
   margin: 0 0 8px 0;
   padding: 18px 26px;
   font-weight: 500;
