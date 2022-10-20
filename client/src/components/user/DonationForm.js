@@ -26,34 +26,34 @@ export const Donate = ({ profileId }) => {
                         <h2>Let's Get Donating</h2>
                         <p>Want to know more about Helping Hands. Or want to get involved more and support those in need? Get in touch by completing the form below and we'll be in touch.</p>
                         {auth.loggedIn() ? (
-                        <form>
+                        <form onSubmit={handleFormSubmit} >
                             <Row>
                                 <Col>
-                                <input
+                                <input 
                                 placeholder= "Add photos of your donation"
                                 type= 'file'
                                 name="itemImage"
-                                value={donation.itemImage}
+                                value={donation.itemImage}                                 
                                 onChange={(event) => setDonation(event.target.value)}></input>
                                 </Col>
                             </Row>
                             <Row>
                                 <Col sm={6} className="px-1">
-                                <input
-                                placeholder= "Title"
+                                <input 
+                                placeholder= "Title" 
                                 type= 'text'
                                 name="itemTitle"
-                                value={donation.itemTitle}
+                                value={donation.itemTitle}                                 
                                 onChange={(event) => setDonation(event.target.value)}></input>
                                 </Col>
                             </Row>
                             <Row>
                                 <Col>
-                                <input
-                                placeholder= "Description"
+                                <input 
+                                placeholder= "Description" 
                                 type= 'text'
                                 name="itemDescription"
-                                value={donation.itemDescription}
+                                value={donation.itemDescription}                                 
                                 onChange={(event) => setDonation(event.target.value)}></input>
                                 <button type="submit"></button>
                                 {error && (
@@ -78,6 +78,8 @@ export const Donate = ({ profileId }) => {
                     </Col>
                 </Row>
             </Container>
+
         </section>
+
     );
 };
