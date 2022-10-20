@@ -4,15 +4,15 @@ export const ALL_USERS = gql`
         users {
             email
             username
-        donations {
-            _id
-            item_description
-            item_imageUrl
-            item_name
-            item_quantity
-            item_received
-            item_status
-      }
+            donations {
+              _id
+              item_description
+              item_imageUrl
+              item_name
+              item_quantity
+              item_received
+              item_status
+        }
     }
   }
 `;
