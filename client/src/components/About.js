@@ -36,9 +36,9 @@ return (
                     <h2>
                       About Helping Hands 
                     </h2>
-                    <p>Launched in 2022, Helping Hands is the world’s largest social donation platform. With over 1 million items being donated from more than 20 different countries, we’re on a mission to help people donate new and pre-loved items to those in need.</p>
+                    <p>Launched in 2022, Helping Hands is the worlds largest social donation platform. With over 1 million items being donated from more than 20 different countries, were on a mission to help people donate new and pre-loved items to those in need.</p>
                     <div className="about-imgbx">
-                      <img src={teamImg} />
+                      <img alt="about us information" src={teamImg} />
                         <div className="about-txtx">
                             <h4>Web Development</h4>
                             <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span>
@@ -62,7 +62,7 @@ return (
                 </Col>
             </Row>
         </Container>
-        <img className="background-image-left" src={colorSharp} />
+        <img alt="about us information" className="background-image-left" src={colorSharp} />
       </section>
   )
 }

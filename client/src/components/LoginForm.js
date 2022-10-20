@@ -19,6 +19,12 @@ export const LoginForm = () => {
           [category]: value
         })
     }
+
+    // TODO: once user logged in
+
+    // TODO: redirect to dashboard.js? or donation form?
+
+
     
     return (
         <section className="login" id="connect">

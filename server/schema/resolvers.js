@@ -2,6 +2,8 @@ const { Error } = require('mongoose');
 const Donation = require('../models/Donation');
 const User = require('../models/User');
 const { signToken } = require('../utils/auth');
+const { validateSignUpInput } = require('../utils/validators');
+const { UserInputError } = require('apollo-server');
 
 // //to donate must be logged in donating -- currently not using
 // function checkIfLoggedIn (context){
@@ -55,12 +57,27 @@ const resolvers = {
 
     Mutation: {
 
+      
       createUser: async (parent, {username, email, password }, context ) => {
         const user = await User.create({
           username, email, password
         });
+        
+        // validate user input from validators file
+        const { valid, errors } = validateSignUpInput(username, email, password);
+        if (!valid) {
+          throw new UserInputError('Errors', { errors })
+        }
+        const checkUser = await User.findOne({username});
+        if (checkUser) {
+          throw new UserInputError('Username is taken', {
+            errors: {
+              username: 'this username is taken'
+            }
+          });
+        }
 
-        if (!user){
+        if(!user){
           throw new Error('Something went wrong')
         }
         const token = signToken(user);
@@ -69,16 +86,19 @@ const resolvers = {
       }, 
 
       login: async (parent, { email, password }) => {
+        const { valid, errors } = validateSignUpInput(email, password);
+
       const user = await User.findOne({email: email});
         if (!user) {
-          throw new Error('Something went wrong!');
+          errors.general = 'User not found'
+          throw new UserInputError('User not found!', { errors });
         }
   
       const correctPw = await user.isCorrectPassword(password); // in user model isCorrectPAssword 
         if (!correctPw) {
           throw new Error('User or Password is incorrect')
         }
-
+        
       const token = signToken(user);
       return ({ token, user }); //if you look in type def we are returning an Auth object, here is that auth object, token and user 
       },

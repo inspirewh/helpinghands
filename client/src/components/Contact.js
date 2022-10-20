@@ -37,20 +37,20 @@ export const Chat = () => {
                         <form ref={form} onSubmit={sendEmail}>
                             <Row>
                                 <Col sm={6} className="px-1">
-                                    <input type="text" name="user_name" placeholder= "First Name" required= 'true' />
+                                    <input type="text" name="user_name" placeholder= "First Name" required={true} />
                                 </Col>
                                 <Col sm={6} className="px-1">
-                                    <input type="text" placeholder= "Last Name" required= 'true' />
+                                    <input type="text" placeholder= "Last Name" required= {true} />
                                 </Col>
                                 <Col sm={6} className="px-1">
-                                    <input type="email" name="user_email" placeholder= "Email Address" required= 'true' onInput={(e) => setEmail(e.target.value)} value={email} />
+                                    <input type="email" name="user_email" placeholder= "Email Address" required= {true} onInput={(e) => setEmail(e.target.value)} value={email} />
                                 </Col>
                                 <Col sm={6} className="px-1">
-                                    <input type="tel" placeholder= "Phone" required= 'true' />
+                                    <input type="tel" placeholder= "Phone" required= {true} />
                                 </Col>
                                 <Col>
-                                    <textarea row="6" name="user_message" placeholder= "Message" required= 'true' />
-                                    <button type="submit" value="Send" placeholder='Enter Your Message Here' required= 'true' >Send</button>
+                                    <textarea row="6" name="user_message" placeholder= "Message" required= {true} />
+                                    <button type="submit" value="Send" placeholder='Enter Your Message Here' required= {true} >Send</button>
                                 </Col>
                             </Row>
                         </form>
