@@ -134,7 +134,7 @@ return (
                     </div>
                 </Carousel>
         </Container>
-        <img className="background-image-left" src={colorSharp} />
+        <img alt="blah blah" className="background-image-left" src={colorSharp} />
       </section>
   )
 }

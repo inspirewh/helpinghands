@@ -3,11 +3,9 @@ import { Col, Container, Row } from "react-bootstrap";
 import { useMutation } from '@apollo/client';
 import { LOGIN_USER } from '../utils/mutations';
 import Auth from '../utils/auth';
-
 export const LoginForm = (props) => {
     const [formState, setFormState] = useState({ email: '', password: '' });
     const [loginUser, { error }] = useMutation(LOGIN_USER);
-  
     const handleFormSubmit = async (event) => {
       event.preventDefault();
       try {
@@ -20,7 +18,6 @@ export const LoginForm = (props) => {
         console.log(e);
       }
     };
-  
     const handleChange = (event) => {
       const { name, value } = event.target;
       setFormState({
@@ -28,8 +25,6 @@ export const LoginForm = (props) => {
         [name]: value,
       });
     };
-
-    
     return (
         <section className="login" id="connect">
             <Container>
@@ -40,7 +35,7 @@ export const LoginForm = (props) => {
                         <form onSubmit={handleFormSubmit}>
                             <Row>
                                 <Col sm={6} className="px-1">
-                                    <input 
+                                    <input
                                     placeholder= "Email Address"
                                     name="email"
                                     type="email"
@@ -48,7 +43,7 @@ export const LoginForm = (props) => {
                                     onChange={handleChange} />
                                 </Col>
                                 <Col sm={6} className="px-1">
-                                    <input 
+                                    <input
                                     placeholder="******"
                                     name="password"
                                     type="password"
@@ -56,7 +51,7 @@ export const LoginForm = (props) => {
                                     onChange={handleChange} />
                                 </Col>
                                 <Col>
-                                    <p className="hyperlink-txt">Dont' have an account? <a href="/signup">Click here to signup.</a></p>    
+                                    <p className="hyperlink-txt">Dont' have an account? <a href="/signup">Click here to signup.</a></p>
                                     <button type="submit"></button>
                                 </Col>
                                 {error ? (
@@ -69,8 +64,6 @@ export const LoginForm = (props) => {
                     </Col>
                 </Row>
             </Container>
-
         </section>
-
     )
 }

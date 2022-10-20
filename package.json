@@ -17,6 +17,7 @@
     "concurrently": "^5.1.0"
   },
   "dependencies": {
+    "apollo-server": "^3.10.3",
     "bcrypt": "^5.1.0",
     "dotenv": "^16.0.3",
     "mdbreact": "^5.2.0"
