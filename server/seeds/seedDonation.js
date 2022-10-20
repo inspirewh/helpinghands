@@ -14,7 +14,7 @@ const donations = [
     item_description: "the bees knees",
 
     // boolean
-    item_recieved: true,
+    item_received: true,
 
     // string
     item_imageUrl: "https://www.aaphysiotherapy.com/media/9436/78103111_2729180907103027_1843802500663083008_n.jpg",
@@ -33,7 +33,7 @@ const donations = [
     item_description: "terrifying aggressive dog!",
 
     // boolean
-    item_recieved: false,
+    item_received: false,
 
     // string
     item_imageUrl: "https://i.pinimg.com/236x/e2/42/1e/e2421ea92c654c3e88aa220b69cbd9e3--so-cute-puppy-love.jpg",
@@ -52,7 +52,7 @@ const donations = [
     item_description: "cute children party costume, for kids!",
 
     // boolean
-    item_recieved: true,
+    item_received: true,
 
     // string
     item_imageUrl: "https://costumesheaven.com/wp-content/uploads/2022/05/hero-image.jpg",
@@ -71,7 +71,7 @@ const donations = [
     item_description: "funny dog",
 
     // boolean
-    item_recieved: true,
+    item_received: true,
 
     // string
     item_imageUrl: "https://api.time.com/wp-content/uploads/2014/06/450965060.jpg",
@@ -90,7 +90,7 @@ const donations = [
     item_description: "delicious fish",
 
     // boolean
-    item_recieved: false,
+    item_received: false,
 
     // string
     item_imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/2006_sardines_can_open.jpg/220px-2006_sardines_can_open.jpg",
@@ -109,7 +109,7 @@ const donations = [
     item_description: "patriotic sweater",
 
     // boolean
-    item_recieved: true,
+    item_received: true,
 
     // string
     item_imageUrl: "https://media.cnn.com/api/v1/images/stellar/prod/191211145618-02-ugly-christmas-sweater-1211-trump.jpg?q=x_2,y_166,h_1123,w_1995,c_crop/h_270,w_480",
@@ -128,7 +128,7 @@ const donations = [
     item_description: "warm socks",
 
     // boolean
-    item_recieved: true,
+    item_received: true,
 
     // string
     item_imageUrl: "https://i.etsystatic.com/6572991/r/il/b91cff/3593874136/il_570xN.3593874136_qf0e.jpg",
@@ -147,7 +147,7 @@ const donations = [
     item_description: "fun toy for kids",
 
     // boolean
-    item_recieved: false,
+    item_received: false,
 
     // string
     item_imageUrl: "https://i.ebayimg.com/images/g/1q4AAOSwC0dbtnBx/s-l500.jpg",
@@ -166,7 +166,7 @@ const donations = [
     item_description: "1 cheese block, still in date, tastes good",
 
     // boolean
-    item_recieved: true,
+    item_received: true,
 
     // string
     item_imageUrl: "https://i.kinja-img.com/gawker-media/image/upload/c_fill,f_auto,fl_progressive,g_center,h_675,pg_1,q_80,w_1200/uqbmfey72kvyyux2b50d.jpg",
@@ -185,7 +185,7 @@ const donations = [
     item_description: "1x unconcious human",
 
     // boolean
-    item_recieved: false,
+    item_received: false,
 
     // string
     item_imageUrl: "https://www.firstaidpro.com.au/wp-content/uploads/2020/11/X0000_Physio_LifePak-CR-Plus-at-EMS-handoff-copy.jpg",

@@ -52,7 +52,7 @@ export const UserNavBar = () => {
                         <a href="www.facebook.com"><img src={navIcon1} alt="nav icon"/></a>
                         <a href="www.facebook.com"><img src={navIcon2} alt="nav icon"/></a>
                     </div>
-                    <Link to="/signup">
+                    <Link to="/donate">
                         <button className="main-btn" >Get Donating <ArrowRightCircle size={25} /></button>
                     </Link>
                 </span>

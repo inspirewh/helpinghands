@@ -14,8 +14,9 @@ const donationSchema = new mongoose.Schema({
         required: true,
         trim: true,
     },
-    item_recieved: {
+    item_received: {
         type: Boolean,
+        required: false,
     },
     item_imageUrl: {
         type: String,
@@ -27,7 +28,7 @@ const donationSchema = new mongoose.Schema({
     },
     item_status_sent: {
         type: String,
-        required: true,
+        required: false,
         default: Date.now,
     }
 },{

@@ -28,13 +28,13 @@ export const ADD_USER = gql`
 
 // Mutation definition for adding a donation post
 export const ADD_DONATION = gql`
-  mutation addDonation($itemName: String!, $itemDescription: String!, $itemRecieved: Boolean!, $itemImageUrl: String!, $itemQuantity: Int!, $itemStatus: String!){
-    addDonation(item_name: $itemName, item_description: $itemDescription, item_recieved: $itemRecieved, item_imageUrl: $itemImageUrl, item_quantity: $itemQuantity, item_status: $itemStatus) {
+  mutation addDonation($itemName: String!, $itemDescription: String!, $itemReceived: Boolean, $itemImageUrl: String!, $itemQuantity: Int!, $itemStatus: String){
+    addDonation(item_name: $itemName, item_description: $itemDescription, item_received: $itemReceived, item_imageUrl: $itemImageUrl, item_quantity: $itemQuantity, item_status: $itemStatus) {
       item_description
       item_imageUrl
       item_quantity
       item_name
-      item_recieved
+      item_received
       item_status
   }
 }
