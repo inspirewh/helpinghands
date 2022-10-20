@@ -1,44 +1,61 @@
-import gql from 'graphql-tag'
+import { gql } from '@apollo/client'
 
-export const QUERY_DONATIONS = gql `
-    query donations{
-        donation {
-            _id
-            username
+export const ALL_USERS = gql`
+    query allUsers{
+        users {
             email
-            image
-            title
-            description
-        }
-    }
-`;
-
-export const QUERY_PROFILES = gql`
-  query allProfiles {
-    profiles {
-      _id
-      name
-      donations
+            username
+        donations {
+            _id
+            item_description
+            item_imageUrl
+            item_name
+            item_quantity
+            item_recieved
+            item_status
+      }
     }
   }
 `;
-
-export const QUERY_SINGLE_PROFILE = gql`
-  query singleProfile($profileId: ID!) {
-    profile(profileId: $profileId) {
-      _id
-      name
-      donation
+export const SINGLE_USER = gql`
+    query getSingleUser($username: String!){
+        singleUser(username: $username) {
+            email
+            username
+        donations {
+            item_description
+            item_imageUrl
+            item_name
+            item_quantity
+            item_recieved
+            item_status
+      }
     }
   }
 `;
-
-export const QUERY_ME = gql`
-  query me {
-    me {
-      _id
-      name
-      donations
+export const ALL_DONATIONS= gql`
+    query allDonations{
+        Donations {
+            _id
+            item_description
+            item_imageUrl
+            item_name
+            item_quantity
+            item_recieved
+            item_status
     }
   }
+`;
+export const SINGLE_DONATION = gql`
+    query singledonation($singleDonationId: ID!){
+        singleDonation(donation_id: $singleDonationId) {
+            _id
+            item_description
+            item_imageUrl
+            item_name
+            item_quantity
+            item_recieved
+            item_status
+    }
+}
 `;
