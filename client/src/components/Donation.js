@@ -2,8 +2,9 @@ import { Container, Row, Col, Card } from "react-bootstrap";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import colorSharp from "../assets/img/color-sharp.png"
-import donationImg from "../assets/img/tshirtPlaceholder.jpg";
 
+import { useQuery } from '@apollo/client'; //
+import { ALL_USERS } from '../utils/queries'; 
 
 // creating to sliding carousel display donation of job history
 export const DonationFeed = () => {
@@ -27,6 +28,19 @@ export const DonationFeed = () => {
         }
       };
 
+    const { data } = useQuery(ALL_USERS) //
+    const users = data?.users || []; //
+    const donations = users.flatMap(user => {
+      return user.donations.map((don) => {
+        return {
+          ...don,
+          username: user.username,
+        }
+      })
+    })
+    /// show all donations in cards
+    // each card should have username
+
 return (
       <section className="donation" id="donation">
         <Container>
@@ -49,54 +63,25 @@ return (
           </Container>
           <Container>
                 <Carousel responsive={responsive} infinite={true} className="donation-slide">
-                    <div className="item">
+                  {/* when new donation is submitted then add to the front of the carousel */}
+                  {donations.map((donation) => (
+                    <div className="item" key={donation._id}>
                     <Card style={{ width: '25rem' }}>
-                      <Card.Img variant="top" src={donationImg} />
+                      <Card.Img variant="top" src={donation.item_imageUrl} />
                       <Card.Body>
-                        <Card.Title>Card Title</Card.Title>
+                        <Card.Title>{donation.item_name}</Card.Title>
                         <Card.Text>
-                          Some quick example text to build on the card title and make up the
-                          bulk of the card's content.
+                          Donated by {donation.username}
+                          Quantity: {donation.item_quantity} 
+                          {donation.item_description}
+                          {donation.item_received}
+                          {donation.item_status}
                         </Card.Text>
                       </Card.Body>
                     </Card>
                     </div>
-                    <div className="item">
-                      <Card style={{ width: '25rem' }}>
-                        <Card.Img variant="top" src={donationImg} />
-                        <Card.Body>
-                          <Card.Title>Card Title</Card.Title>
-                          <Card.Text>
-                            Some quick example text to build on the card title and make up the
-                            bulk of the card's content.
-                          </Card.Text>
-                        </Card.Body>
-                      </Card>
-                    </div>
-                    <div className="item">
-                        <Card style={{ width: '25rem' }}>
-                        <Card.Img variant="top" src={donationImg} />
-                        <Card.Body>
-                          <Card.Title>Card Title</Card.Title>
-                          <Card.Text>
-                            Some quick example text to build on the card title and make up the
-                            bulk of the card's content.
-                          </Card.Text>
-                        </Card.Body>
-                      </Card>
-                    </div>
-                    <div className="item">
-                        <Card style={{ width: '25rem' }}>
-                        <Card.Img variant="top" src={donationImg} />
-                        <Card.Body>
-                          <Card.Title>Card Title</Card.Title>
-                          <Card.Text>
-                            Some quick example text to build on the card title and make up the
-                            bulk of the card's content.
-                          </Card.Text>
-                        </Card.Body>
-                      </Card>
-                    </div>
+                  ))}
+                    
                 </Carousel>
         </Container>
         <img className="background-image-left" alt="bg pic" src={colorSharp} />
