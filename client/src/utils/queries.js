@@ -1,14 +1,65 @@
 import gql from 'graphql-tag'
 
-export const QUERY_DONATIONS = gql `
-    query donations{
-        donation {
-            _id
-            username
+export const ALL_USERS = gql `
+    query getAllUsers{
+        users {
             email
-            image
-            title
-            description
-        }
+            username
+        donations {
+            _id
+            item_description
+            item_imageUrl
+            item_name
+            item_quantity
+            item_recieved
+            item_status
+      }
     }
+  }
+`;  
+
+export const SINGLE_USER = gql `
+    query getSingleUser($username: String!){
+        singleUser(username: $username) {
+            email
+            username
+        donations {
+            item_description
+            item_imageUrl
+            item_name
+            item_quantity
+            item_recieved
+            item_status
+      }
+    }
+  }
+  }
+`;
+
+export const ALL_DONATIONS= gql `
+    query allDonations{
+        Donations {
+            _id
+            item_description
+            item_imageUrl
+            item_name
+            item_quantity
+            item_recieved
+            item_status
+    }
+  }
+`;
+
+export const SINGLE_DONATION = gql `
+    query singledonation($singleDonationId: ID!){
+        singleDonation(donation_id: $singleDonationId) {
+            _id
+            item_description
+            item_imageUrl
+            item_name
+            item_quantity
+            item_recieved
+            item_status
+    }
+}
 `;
