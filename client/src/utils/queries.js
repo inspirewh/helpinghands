@@ -10,7 +10,7 @@ export const ALL_USERS = gql`
             item_imageUrl
             item_name
             item_quantity
-            item_recieved
+            item_received
             item_status
       }
     }
@@ -26,7 +26,7 @@ export const SINGLE_USER = gql`
             item_imageUrl
             item_name
             item_quantity
-            item_recieved
+            item_received
             item_status
       }
     }
@@ -40,7 +40,7 @@ export const ALL_DONATIONS= gql`
             item_imageUrl
             item_name
             item_quantity
-            item_recieved
+            item_received
             item_status
     }
   }
@@ -53,7 +53,7 @@ export const SINGLE_DONATION = gql`
             item_imageUrl
             item_name
             item_quantity
-            item_recieved
+            item_received
             item_status
     }
 }
@@ -68,7 +68,7 @@ export const QUERY_ME = gql`
         item_imageUrl
         item_name
         item_quantity
-        item_recieved
+        item_received
         item_status
         }
     }

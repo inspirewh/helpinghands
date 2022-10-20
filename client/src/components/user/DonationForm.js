@@ -5,15 +5,26 @@ import { useMutation } from '@apollo/client';
 import { ADD_DONATION } from '../../utils/mutations';
 import auth from '../../utils/auth';
 export const Donate = ({ profileId }) => {
-    const [donation, setDonation] = useState('');
+    const [itemImageUrl, setItemImageUrl] = useState('');  // TODO: fix, donation should be an object, not a string
+    const [itemDescription, setitemDescription] = useState('');
+    const [itemName, setitemName] = useState('');
     const [addDonation, { error }] = useMutation(ADD_DONATION);
     const handleFormSubmit = async (event) => {
       event.preventDefault();
       try {
         const data = await addDonation({
-          variables: { profileId, donation },
+          variables: { 
+            // TODO: create a state for each input field
+            item_description: itemDescription,
+            item_imageUrl: itemImageUrl,
+            item_name: itemName, 
+            item_quantity: itemQuantity,
+        },
         });
-        setDonation('');
+        setItemImageUrl('');
+        setitemDescription('');
+        setitemName('');
+        setitemQuantity('');
       } catch (err) {
         console.error(err);
       }
@@ -31,10 +42,20 @@ export const Donate = ({ profileId }) => {
                                 <Col>
                                 <input 
                                 placeholder= "Add photos of your donation"
-                                type= 'file'
-                                name="itemImage"
-                                value={donation.itemImage}                                 
-                                onChange={(event) => setDonation(event.target.value)}></input>
+                                type= 'url'
+                                name="itemImageUrl"
+                                value={itemImageUrl}                                 
+                                onChange={(event) => setItemImageUrl(event.target.value)}></input>
+                                </Col>
+                            </Row>
+                            <Row>
+                                <Col>
+                                <input 
+                                placeholder= "Enter the quantity"
+                                type= 'text'
+                                name="itemQuantity"
+                                value={itemQuantity}                                 
+                                onChange={(event) => setitemQuantity(event.target.value)}></input>
                                 </Col>
                             </Row>
                             <Row>
@@ -42,9 +63,9 @@ export const Donate = ({ profileId }) => {
                                 <input 
                                 placeholder= "Title" 
                                 type= 'text'
-                                name="itemTitle"
-                                value={donation.itemTitle}                                 
-                                onChange={(event) => setDonation(event.target.value)}></input>
+                                name="itemName"
+                                value={itemName}                                 
+                                onChange={(event) => setitemName(event.target.value)}></input>
                                 </Col>
                             </Row>
                             <Row>
@@ -53,8 +74,8 @@ export const Donate = ({ profileId }) => {
                                 placeholder= "Description" 
                                 type= 'text'
                                 name="itemDescription"
-                                value={donation.itemDescription}                                 
-                                onChange={(event) => setDonation(event.target.value)}></input>
+                                value={itemDescription}                                 
+                                onChange={(event) => setitemDescription(event.target.value)}></input>
                                 <button type="submit"></button>
                                 {error && (
                                     <div className="col-12 my-3 bg-danger text-white p-3">
