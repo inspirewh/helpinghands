@@ -27,7 +27,7 @@ export const ADD_USER = gql`
 `;
 
 // Mutation definition for adding a donation post
-export const POST_DONATION = gql`
+export const ADD_DONATION = gql`
   mutation postDonation ($input: postedDonation!) {
     postDonation(input: $input) {
       username

@@ -34,7 +34,7 @@ class AuthService {
         //id_token is coming from the Server and when the user logs in or signs up it provides a token where then we set that in the localStorage. 
         localStorage.setItem('id_token', idToken);
         //After login, we will take the user back to the home/about page
-        window.location.assign('/');
+        window.location.assign('/dashboard');
     }
 
     logout() {
