@@ -1,30 +1,31 @@
 import { useState }from "react";
 import { Col, Container, Row } from "react-bootstrap";
+import { useMutation } from '@apollo/client';
+import { ADD_DONATION } from '../../utils/mutations';
+import auth from '../../utils/auth';
 
-export const Donate = () => {
-    //the initial default state
-    const formInitialDetails = {
-        firstName: '',
-        lastName: '',
-        email: '',
-        phone: '',
-        message: '',
-    }
-    //A state that stores the inputdetails
-    const [formDetails, setFormDetails] = useState(formInitialDetails);
-    //submit button (default = send when user preses send "change text to "sending"  )
-    const [buttontext] = useState('Send')
-    const [status] = useState({});
-    //updates the form details state so it leaves the rest form details intact and only updated the field indicated 
-    const onFormUpdate = (category, value) => {
-        setFormDetails({
-          ...formDetails,
-          [category]: value
-        })
-    }
+export const Donate = ({ profileId }) => {
+    const [donation, setDonation] = useState('');
+  
+    const [addDonation, { error }] = useMutation(ADD_DONATION);
+  
+    const handleFormSubmit = async (event) => {
+      event.preventDefault();
+  
+      try {
+        const data = await addDonation({
+          variables: { profileId, donation },
+        });
+  
+        setDonation('');
+      } catch (err) {
+        console.error(err);
+      }
+    };
     
     return (
         <section className="donationForm" id="donate">
+        {auth.loggedIn() ? (
             <Container>
                 <Row className="justify-content-center align-items-center" id= "inputForm">
                     <Col className="inputForm" md={6}>
@@ -47,18 +48,17 @@ export const Donate = () => {
                                     <button type="submit"><span>{buttontext}</span></button>
                                 </Col>
                             </Row>
-                                {
-                                    status.message &&
-                                    <Col>
-                                    <p className={status.success === false ? "danger" : "success"}>{status.message}</p>
-                                    </Col>
-                                }
                         </form>
                     </Col>
                 </Row>
             </Container>
-
+                ) : (
+                    <p>
+                    You need to be logged in to donate. Please{' '}
+                    <Link to="/login">login</Link> or <Link to="/signup">signup.</Link>
+                    </p>
+                )}
+                </div>
+            );
+            };
         </section>
-
-    )
-}

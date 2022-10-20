@@ -1,7 +1,7 @@
-import gql from 'graphql-tag'
+import { gql } from '@apollo/client'
 
-export const ALL_USERS = gql `
-    query getAllUsers{
+export const ALL_USERS = gql`
+    query allUsers{
         users {
             email
             username
@@ -16,9 +16,8 @@ export const ALL_USERS = gql `
       }
     }
   }
-`;  
-
-export const SINGLE_USER = gql `
+`;
+export const SINGLE_USER = gql`
     query getSingleUser($username: String!){
         singleUser(username: $username) {
             email
@@ -33,10 +32,8 @@ export const SINGLE_USER = gql `
       }
     }
   }
-  }
 `;
-
-export const ALL_DONATIONS= gql `
+export const ALL_DONATIONS= gql`
     query allDonations{
         Donations {
             _id
@@ -49,8 +46,7 @@ export const ALL_DONATIONS= gql `
     }
   }
 `;
-
-export const SINGLE_DONATION = gql `
+export const SINGLE_DONATION = gql`
     query singledonation($singleDonationId: ID!){
         singleDonation(donation_id: $singleDonationId) {
             _id

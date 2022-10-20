@@ -13,7 +13,6 @@ export const SignupForm = () => {
         password: '',
     };
     //A state that stores the inputdetails
-    //(formdetails=formvalues) setFormDetails=setformvalues
     const [formValues, setFormValues] = useState(formInitialValues);
     const [formErrors, setFormErrors] = useState({});
     const [isSubmit, setIsSubmit] = useState(false);
@@ -107,7 +106,7 @@ export const SignupForm = () => {
                                 <Col>
                                     <p className="hyperlink-txt">Already have an account? <a href="/login">Click here to login.</a>
                                     </p>
-                                    <button type="submit"><span></span></button>
+                                    <button type="submit">Submit</button>
                                 </Col>
                             </Row>
                         </form>
