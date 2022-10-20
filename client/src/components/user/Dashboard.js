@@ -3,10 +3,10 @@ import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import colorSharp from "../../assets/img/color-sharp.png"
 import donationImg from "../../assets/img/tshirtPlaceholder.jpg";
-import { Navigate, useParams } from 'react-router-dom';
+import { Navigate, useNavigate, useParams } from 'react-router-dom';
 import { useQuery } from '@apollo/client';
 import auth from '../../utils/auth';
-import { QUERY_SINGLE_PROFILE, QUERY_ME } from '../../utils/queries';
+import { SINGLE_USER, QUERY_ME } from '../../utils/queries';
 
 
 // creating to sliding carousel display donation of job history
@@ -15,26 +15,30 @@ export const UserDashboard = () => {
   const { profileId } = useParams();
 
   // If there is no `profileId` in the URL as a parameter, execute the `QUERY_ME` query instead for the logged in user's information
-  const { loading, data } = useQuery(
-    profileId ? QUERY_SINGLE_PROFILE : QUERY_ME,
-    {
-      variables: { profileId: profileId },
-    }
+  const { loading, data,error } = useQuery(
+    QUERY_ME
   );
+
+  const navigate = useNavigate();
+
+  if(error){
+    navigate('/')
+  }
 
   // Check if data is returning from the `QUERY_ME` query, then the `QUERY_SINGLE_PROFILE` query
   const profile = data?.me || data?.profile || {};
 
+  // TODO: move to login
   // Use React Router's `<Redirect />` component to redirect to personal profile page if username is yours
-  if (auth.loggedIn() && auth.getProfile().data._id === profileId) {
-    return <Navigate to="/dashboard" />;
-  }
+  // if (auth.loggedIn() && auth.getProfile().data._id === profileId) {
+  //   return <Navigate to="/dashboard" />;
+  // }
 
   if (loading) {
     return <div>Loading...</div>;
   }
 
-  if (!profile?.name) {
+  if (!profile?.username) {
     return (
       <h4>
         Oops! You need to be logged in to see this page. Use the navigation
@@ -71,7 +75,7 @@ return (
                 <Col>
                 <div className="dashboard-bx">
                     <h2>
-                    {profile.name}, thank you for being a helping hand!  
+                    {profile.username}, thank you for being a helping hand!  
                     </h2>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ornare congue pharetra. Curabitur non leo ut quam tincidunt maximus. Etiam id diam at velit ornare vehicula eu nec augue. Nunc id faucibus sem, ac mollis nulla. Sed luctus viverra pulvinar.</p>
                     <h4>

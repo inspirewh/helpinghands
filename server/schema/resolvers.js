@@ -14,7 +14,15 @@ const { UserInputError } = require('apollo-server');
 
 const resolvers = {
   Query: {
-
+    me: async (parent, args, context) => {
+      if (context.user) {
+        return User.findOne({ _id: context.user._id }).populate({
+          path: 'donation_ids',
+          model: Donation,
+        });
+      }
+      throw new Error('You need to be logged in!');
+    },
     singleUser: async(parent, { username }) => {
         const user = await  User.findOne({ username: username }).populate({
           path: 'donation_ids',

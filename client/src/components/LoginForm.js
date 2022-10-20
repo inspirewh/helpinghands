@@ -52,7 +52,7 @@ export const LoginForm = (props) => {
                                 </Col>
                                 <Col>
                                     <p className="hyperlink-txt">Dont' have an account? <a href="/signup">Click here to signup.</a></p>
-                                    <button type="submit"></button>
+                                    <button to='/dashboard' type="submit"></button>
                                 </Col>
                                 {error ? (
                                     <div>

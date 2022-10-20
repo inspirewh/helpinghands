@@ -27,6 +27,7 @@ const typeDefs = gql`
     singleUser(username: String!): User
     Donations: [Donation]
     singleDonation(donation_id: ID!): Donation
+    me: User
   }
 
   type Mutation {

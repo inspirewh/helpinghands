@@ -1,5 +1,4 @@
 import { gql } from '@apollo/client'
-
 export const ALL_USERS = gql`
     query allUsers{
         users {
@@ -58,4 +57,20 @@ export const SINGLE_DONATION = gql`
             item_status
     }
 }
+`;
+export const QUERY_ME = gql`
+  query me {
+    me {
+      _id
+      username
+      donations {
+        item_description
+        item_imageUrl
+        item_name
+        item_quantity
+        item_recieved
+        item_status
+        }
+    }
+  }
 `;
