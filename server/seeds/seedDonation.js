@@ -30,7 +30,7 @@ const donations = [
     item_name: "Clothes for women",
 
     // string
-    item_description: "Pre loved clothes. Sending with love x",
+    item_description: "Here are some pre loved clothes. Sending with love x",
 
     // boolean
     item_received: false,
@@ -144,7 +144,7 @@ const donations = [
     item_name: "Footy",
 
     // string
-    item_description: "fun for the kids to kick around and learn the great sport",
+    item_description: "Fun for the kids to kick around and learn the great sport",
 
     // boolean
     item_received: false,

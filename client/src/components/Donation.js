@@ -40,25 +40,18 @@ export const DonationFeed = () => {
       })
     })
 
-    // const received = function(){
-    //   {donations.map((donation) => {
-    //     if(donation.item_received === true){
-    //        return <Card.Text>Item is received and waiting to find it's new home!</Card.Text>
-    //     }else{
-    //       return <Card.Text>Item is on it's way!</Card.Text>
-    //     }
-    //   })}
-    // }
+//     const receieved = donations.map((donation) => {
+//       return donation.item_received
+//     })
 
-    function receive(donations){
-      const receivedStatus = donations.item_received
-      if(receivedStatus === true){
-               return "Item is received and waiting to find it's new home!"
-            }else{
-              return "Item is on it's way!"
-            }
-    }
-
+// console.log(receieved)
+//     const isReceived = (receieved) => {
+//         if(receieved ++ === true){
+//           return "Item is received and waiting to find it's new home!"
+//         }else{
+//           return "Item is on it's way!"
+//         }
+//     }
     /// show all donations in cards
     // each card should have username
 
@@ -71,7 +64,7 @@ return (
                     <h2>
                       Live Donation Feed  
                     </h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ornare congue pharetra. Curabitur non leo ut quam tincidunt maximus. Etiam id diam at velit ornare vehicula eu nec augue. Nunc id faucibus sem, ac mollis nulla. Sed luctus viverra pulvinar.</p>
+                    <p>Here is our most current donations from our helping hands, we're putting your charity at the heart of the proud helping hands experience and making it even easier for kind-hearted people like you to donate to those in need.</p>
                     <div className="donation-imgbx">  
                         <div className="donation-txtx">
                             <h4>Web Development</h4>
@@ -84,16 +77,16 @@ return (
           </Container>
           <Container>
                 <Carousel responsive={responsive} infinite={true} className="donation-slide">
-                  {/* when new donation is submitted then add to the front of the carousel */}
                   {donations.map((donation) => (
                     <div className="item" key={donation._id}>
                     <Card style={{ width: '100%'}}>
-                      <Card.Img variant="top" src={donation.item_imageUrl}/>
+                      <Card.Img variant="top" style={{height:'25rem', width: '100%', objectFit:'cover'}} src={donation.item_imageUrl}/>
                       <Card.Body>
                         <Card.Title>{donation.item_name}</Card.Title>
                         <Card.Text>Donated by {donation.username}</Card.Text>
                         <Card.Text>Quantity: {donation.item_quantity}</Card.Text>
                         <Card.Text>{donation.item_description} </Card.Text>
+                        {/* <Card.Text>{isReceived()}</Card.Text> */}
                       </Card.Body>
                     </Card>
                     </div>
