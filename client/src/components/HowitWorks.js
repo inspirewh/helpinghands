@@ -2,7 +2,7 @@ import { Container, Row, Col } from "react-bootstrap";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import colorSharp from "../assets/img/color-sharp.png"
-import teamImg from "../assets/img/teamphoto.png";
+import howitworks from "../assets/img/howitworks.jpg";
 
 
 // creating to sliding carousel display resume of job history
@@ -40,10 +40,10 @@ return (
                     <br></br> <br></br> <span className="fw-bold">2. Get Donating</span> <br></br> Navigate to the "Get Donating" Page and complete the form; simply upload a clear image of the item, enter a title, description and quanity and of the item you are donating.
                     <br></br> <br></br> <span className="fw-bold">3. Drop Off Your Donations</span> <br></br> We have numberous drop off points, simply drop off your donations to a Drop Off point. Once dropped off your item will be marked as receieved and your donation will be on it's way to lend a helping hand.</p>
                     <div className="HowitWorks-imgbx">
-                      <img alt="HowitWorks us information" src={teamImg} />
+                      <img alt="HowitWorks us information" src={howitworks} />
                         <div className="HowitWorks-txtx">
-                            <h4>Web Development</h4>
-                            <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span>
+                            <h4>Helping you help others</h4>
+                            <span>Helping you donate new and pre-loved items to those in need</span>
                         </div>
                     </div>
                   </div>

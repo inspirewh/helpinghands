@@ -509,7 +509,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   transition: 0.5s ease-in-out;
   opacity: 0;
   width: 100%;
-  color: #535353;
+  color: #ffffff;
 }
 .HowitWorks-txtx h4 {
   font-size: 30px;
@@ -522,7 +522,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   font-weight: 400;
   font-size: 15px;
   letter-spacing: 0.8px;
-  color: #535353;
+  color: #ffffff;
 }
 
 .HowitWorks p {
