@@ -120,7 +120,15 @@ const users = [
 async function seedUsers(){
   
 
-  return await User.insertMany(users);
+
+  const results = [];
+  for (let index = 0; index < users.length; index++) {
+    const user = users[index];
+    const created = await User.create(user);
+    results.push(created);
+  }
+  return results;
+  
   //connect mongoose
   // mongoose
   //   .connect(String(connection.db), { useNewUrlParser: true })

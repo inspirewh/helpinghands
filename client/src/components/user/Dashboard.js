@@ -18,16 +18,22 @@ export const UserDashboard = () => {
   const { loading, data,error } = useQuery(
     QUERY_ME
   );
+  console.log('works?', data);
 
+  const profile = data?.me || [];
+  
+
+  console.log('please be it', profile);
+  
+  
+  
   const navigate = useNavigate();
-
+  
   if(error){
     navigate('/')
   }
 
   // Check if data is returning from the `QUERY_ME` query, then the `QUERY_SINGLE_PROFILE` query
-  const profile = data?.me || data?.profile || {};
-
   // TODO: move to login
   // Use React Router's `<Redirect />` component to redirect to personal profile page if username is yours
   // if (auth.loggedIn() && auth.getProfile().data._id === profileId) {
