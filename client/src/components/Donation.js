@@ -35,9 +35,30 @@ export const DonationFeed = () => {
         return {
           ...don,
           username: user.username,
+          ...don.item_received,
         }
       })
     })
+
+    // const received = function(){
+    //   {donations.map((donation) => {
+    //     if(donation.item_received === true){
+    //        return <Card.Text>Item is received and waiting to find it's new home!</Card.Text>
+    //     }else{
+    //       return <Card.Text>Item is on it's way!</Card.Text>
+    //     }
+    //   })}
+    // }
+
+    function receive(donations){
+      const receivedStatus = donations.item_received
+      if(receivedStatus === true){
+               return "Item is received and waiting to find it's new home!"
+            }else{
+              return "Item is on it's way!"
+            }
+    }
+
     /// show all donations in cards
     // each card should have username
 
@@ -66,17 +87,13 @@ return (
                   {/* when new donation is submitted then add to the front of the carousel */}
                   {donations.map((donation) => (
                     <div className="item" key={donation._id}>
-                    <Card style={{ width: '25rem' }}>
-                      <Card.Img variant="top" src={donation.item_imageUrl} />
+                    <Card style={{ width: '100%'}}>
+                      <Card.Img variant="top" src={donation.item_imageUrl}/>
                       <Card.Body>
                         <Card.Title>{donation.item_name}</Card.Title>
-                        <Card.Text>
-                          Donated by {donation.username}
-                          Quantity: {donation.item_quantity} 
-                          {donation.item_description}
-                          {donation.item_received}
-                          {donation.item_status}
-                        </Card.Text>
+                        <Card.Text>Donated by {donation.username}</Card.Text>
+                        <Card.Text>Quantity: {donation.item_quantity}</Card.Text>
+                        <Card.Text>{donation.item_description} </Card.Text>
                       </Card.Body>
                     </Card>
                     </div>
