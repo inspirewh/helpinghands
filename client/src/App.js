@@ -19,6 +19,7 @@ import Dashboard from './pages/user/Dashboard';
 import DonationForm from './pages/user/DonationForm';
 import UserConnect from './pages/user/UserContact';
 import { Navbar } from 'react-bootstrap';
+import HowitWorks from './pages/HowitWorks';
 
 const httpLink = createHttpLink({
   uri: '/graphql',
@@ -54,6 +55,10 @@ function App() {
             <Route 
               path= "/about" 
               element={<About/>} 
+              />
+              <Route 
+              path= "/how-it-works" 
+              element={<HowitWorks/>} 
               />
             <Route 
               path= "/donation-feed" 
