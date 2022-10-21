@@ -442,6 +442,112 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   width: 40%;
   z-index: -4;
 }
+
+/************ HowitWorks us Css ************/
+
+.HowitWorks {
+  margin-top: 0;
+  padding: 0 0 100px 0;
+  background-color: #fff;
+}
+.HowitWorks-bx {
+  border-radius: 64px;
+  text-align: center;
+  padding: 60px 50px;
+  margin-top: 160px;
+}
+.HowitWorks h2 {
+	font-size: 45px;
+	font-weight: 700;
+  color: #535353;
+}
+.HowitWorks h5 {
+	font-size: 16px;
+	font-weight: 700;
+  color: #535353;
+}
+.HowitWorks img {
+  width: 50%;
+}
+.HowitWorks-imgbx::before {
+  content: "";
+  background: linear-gradient(90.21deg, #6d6d6d -5.91%, #090619 111.58%);
+  opacity: 0.85;
+  position: absolute;
+  width: 100%;
+  height: 0;
+  transition: 0.4s ease-in-out;
+}
+.HowitWorks-imgbx {
+  position: relative;
+  border-radius: 30px;
+  overflow: hidden;
+  margin-bottom: 24px;
+}
+.HowitWorks-imgbx::before {
+  content: "";
+  background: linear-gradient(90.21deg, #6d6d6d -5.91%, #090619 111.58%);
+  opacity: 0.85;
+  position: absolute;
+  width: 50%;
+  height: 0;
+  transition: 0.4s ease-in-out;
+}
+.HowitWorks-imgbx:hover::before {
+  height: 100%;
+}
+.HowitWorks-imgbx:hover .HowitWorks-txtx {
+  top: 50%;
+  opacity: 1;
+}
+.HowitWorks-txtx {
+  position: absolute;
+  text-align: center;
+  top: 65%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: 0.5s ease-in-out;
+  opacity: 0;
+  width: 100%;
+  color: #535353;
+}
+.HowitWorks-txtx h4 {
+  font-size: 30px;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+  line-height: 1.1em;
+}
+.HowitWorks-txtx span {
+  font-style: italic;
+  font-weight: 400;
+  font-size: 15px;
+  letter-spacing: 0.8px;
+  color: #535353;
+}
+
+.HowitWorks p {
+    color: #535353;
+    font-size: 14px;
+    letter-spacing: 0.8px;
+    line-height: 1.5em;
+    margin: 14px 15px 75px 0;
+}
+.HowitWorks-slider {
+  width: 80%;
+  margin: 0 auto;
+  position: relative;
+}
+.HowitWorks-slider .item img {
+  width: 50%;
+  margin: 0 auto 15px auto;
+}
+.background-image-left {
+  top: 28%;
+  position: absolute;
+  bottom: 0;
+  width: 40%;
+  z-index: -4;
+}
 /************ Donationfeed Css ************/
 .donation {
   margin-top: 0;
