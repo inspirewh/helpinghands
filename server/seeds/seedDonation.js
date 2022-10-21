@@ -8,111 +8,54 @@ const User = require("../models/User");
 const donations = [   
   {
     // string
-    item_name: "testitem1",
+    item_name: "Canned food and other goodies",
 
     // string
-    item_description: "the bees knees",
+    item_description: "A random assortment from savoury foods or sweet treats!",
 
     // boolean
     item_received: true,
 
     // string
-    item_imageUrl: "https://www.aaphysiotherapy.com/media/9436/78103111_2729180907103027_1843802500663083008_n.jpg",
+    item_imageUrl: "http://1.bp.blogspot.com/-VKjVEmTlHNM/UMmQErfB5BI/AAAAAAAAE6E/rIK22iPeGk8/s1600/Canned+Food+Haul.JPG",
 
     // number
-    item_quantity: 21,
+    item_quantity: 24,
     
     // boolean
     item_status_sent: true,
   },
   {
     // string
-    item_name: "itemTest2",
+    item_name: "Clothes for women",
 
     // string
-    item_description: "terrifying aggressive dog!",
+    item_description: "Pre loved clothes. Sending with love x",
 
     // boolean
     item_received: false,
 
     // string
-    item_imageUrl: "https://i.pinimg.com/236x/e2/42/1e/e2421ea92c654c3e88aa220b69cbd9e3--so-cute-puppy-love.jpg",
+    item_imageUrl: "https://i.pinimg.com/originals/37/9d/cb/379dcb9c3690e6dbf2ee5942ef30bcf4.jpg",
 
     // number
-    item_quantity: 333,
+    item_quantity: 35,
     
     // boolean
     item_status_sent: true,
   },
   {
     // string
-    item_name: "testingSeedItem3",
+    item_name: "Children toys",
 
     // string
-    item_description: "cute children party costume, for kids!",
+    item_description: "Baby toddler toys. My babys all grown up now so these toys need a new home",
 
     // boolean
     item_received: true,
 
     // string
-    item_imageUrl: "https://costumesheaven.com/wp-content/uploads/2022/05/hero-image.jpg",
-
-    // number
-    item_quantity: 80085,
-    
-    // boolean
-    item_status_sent: true,
-  },
-  {
-    // string
-    item_name: "SeedTestingNo4",
-
-    // string
-    item_description: "funny dog",
-
-    // boolean
-    item_received: true,
-
-    // string
-    item_imageUrl: "https://api.time.com/wp-content/uploads/2014/06/450965060.jpg",
-
-    // number
-    item_quantity: 1,
-    
-    // boolean
-    item_status_sent: true,
-  },
-  {
-    // string
-    item_name: "seededItemNumber5",
-
-    // string
-    item_description: "delicious fish",
-
-    // boolean
-    item_received: false,
-
-    // string
-    item_imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/2006_sardines_can_open.jpg/220px-2006_sardines_can_open.jpg",
-
-    // number
-    item_quantity: 2,
-    
-    // boolean
-    item_status_sent: true,
-  },
-  {
-    // string
-    item_name: "seededDonation6",
-
-    // string
-    item_description: "patriotic sweater",
-
-    // boolean
-    item_received: true,
-
-    // string
-    item_imageUrl: "https://media.cnn.com/api/v1/images/stellar/prod/191211145618-02-ugly-christmas-sweater-1211-trump.jpg?q=x_2,y_166,h_1123,w_1995,c_crop/h_270,w_480",
+    item_imageUrl: "https://webimg.secondhandapp.at/1.1/5b8e6c6dfbd6bc3b46f6591b",
 
     // number
     item_quantity: 7,
@@ -122,54 +65,92 @@ const donations = [
   },
   {
     // string
-    item_name: "seedNumber7",
+    item_name: "Sleeping bag",
 
     // string
-    item_description: "warm socks",
+    item_description: "For the people who really need it please, thank you.",
 
     // boolean
     item_received: true,
 
     // string
-    item_imageUrl: "https://i.etsystatic.com/6572991/r/il/b91cff/3593874136/il_570xN.3593874136_qf0e.jpg",
+    item_imageUrl: "https://pyxis.nymag.com/v1/imgs/9bc/d2d/99da04bdc149cae71447fb73f2fd4b8e51.rsquare.w600.jpg",
 
     // number
-    item_quantity: 2000,
+    item_quantity: 4,
     
     // boolean
     item_status_sent: true,
   },
   {
     // string
-    item_name: "seedSocks8",
+    item_name: "Baby clothes",
 
     // string
-    item_description: "fun toy for kids",
+    item_description: "Micky mouse baby clothes, only worn once",
 
     // boolean
     item_received: false,
 
     // string
-    item_imageUrl: "https://i.ebayimg.com/images/g/1q4AAOSwC0dbtnBx/s-l500.jpg",
+    item_imageUrl: "https://lp2.hm.com/hmgoepprod?set=source[/28/78/287880621663ed20fcf93c929c4fccf2aa74c937.jpg],origin[dam],category[],type[DESCRIPTIVESTILLLIFE],res[z],hmver[2]&call=url[file:/product/main]",
 
     // number
-    item_quantity: 1,
+    item_quantity: 2,
     
     // boolean
     item_status_sent: true,
   },
   {
     // string
-    item_name: "seedySeed9",
+    item_name: "Cozy sweater",
 
     // string
-    item_description: "1 cheese block, still in date, tastes good",
+    item_description: "Something to keep you warm in the winter. Stay cozy!",
 
     // boolean
     item_received: true,
 
     // string
-    item_imageUrl: "https://i.kinja-img.com/gawker-media/image/upload/c_fill,f_auto,fl_progressive,g_center,h_675,pg_1,q_80,w_1200/uqbmfey72kvyyux2b50d.jpg",
+    item_imageUrl: "https://gumtreeau-res.cloudinary.com/image/private/t_$_20/gumtree/13a5e955-63da-40f0-aed3-51663af2d848.jpg",
+
+    // number
+    item_quantity: 7,
+    
+    // boolean
+    item_status_sent: true,
+  },
+  {
+    // string
+    item_name: "Canned vegetables",
+
+    // string
+    item_description: "Supplys for the people to make nice hot meals for the people in need",
+
+    // boolean
+    item_received: true,
+
+    // string
+    item_imageUrl: "https://www.thesun.co.uk/wp-content/uploads/2021/11/image-68.png",
+
+    // number
+    item_quantity: 14,
+    
+    // boolean
+    item_status_sent: true,
+  },
+  {
+    // string
+    item_name: "Footy",
+
+    // string
+    item_description: "fun for the kids to kick around and learn the great sport",
+
+    // boolean
+    item_received: false,
+
+    // string
+    item_imageUrl: "https://gumtreeau-res.cloudinary.com/image/private/t_$_s-l400/gumtree/0f46d723-bd21-4dc8-8192-7c1381a0d7c7.jpg",
 
     // number
     item_quantity: 1,
@@ -179,19 +160,38 @@ const donations = [
   },
   {
     // string
-    item_name: "seedME10",
+    item_name: "Baby clothes",
 
     // string
-    item_description: "1x unconcious human",
+    item_description: "All pink baby clothes, barely worn so I want these put to good use :)",
 
     // boolean
-    item_received: false,
+    item_received: true,
 
     // string
-    item_imageUrl: "https://www.firstaidpro.com.au/wp-content/uploads/2020/11/X0000_Physio_LifePak-CR-Plus-at-EMS-handoff-copy.jpg",
+    item_imageUrl: "https://gumtreeau-res.cloudinary.com/image/private/t_$_58/gumtree/f8ff92a2-0c34-4b3e-81c5-62eacb1c50df.jpg",
 
     // number
-    item_quantity: 1,
+    item_quantity: 5,
+    
+    // boolean
+    item_status_sent: true,
+  },
+  {
+    // string
+    item_name: "Blanket",
+
+    // string
+    item_description: "Large furry blankets to keep warm, super comfortable!",
+
+    // boolean
+    item_received: true,
+
+    // string
+    item_imageUrl: "https://gumtreeau-res.cloudinary.com/image/private/t_$_20/gumtree/2742b3fc-88c6-45c5-a715-acb8b17ca8fe.jpg",
+
+    // number
+    item_quantity: 2,
     
     // boolean
     item_status_sent: true,
