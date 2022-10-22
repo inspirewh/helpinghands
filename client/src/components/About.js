@@ -40,8 +40,8 @@ return (
                     <div className="about-imgbx">
                       <img alt="about us information" src={teamImg} />
                         <div className="about-txtx">
-                            <h4>Web Development</h4>
-                            <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span>
+                            <h4>The worlds largest social donation platform</h4>
+                            <span>On a mission to help people donate new and pre-loved items to those in need..</span>
                         </div>
                     </div>
                   </div>

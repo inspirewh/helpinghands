@@ -50,11 +50,11 @@ return (
                 <Carousel responsive={responsive} infinite={true} className="HowitWorks-slide">
                     <div className="item">
                         <h5 className="fw-bold">How do I start lending a Helping Hand?</h5>
-                        <p>Just tap the "Start Donating" button on our website. Create your secure profile, with just a few short answers. Once you have created your profile you can navigate to the "Get Donating" Page and complete the form; simply upload a clear image of the item, enter a title, description and quanity and of the item you are donating.</p>
+                        <p>Just tap the "Start Donating" button on our website. Create your secure profile, with just a few short answers. Once you have created your profile you can navigate to the "Get Donating" Page and complete the form; simply upload a clear image of the item, enter a title, description and quanity of the item you are donating.</p>
                     </div>
                     <div className="item">
                     <h5 className="fw-bold">Who is Helping Hands for?</h5>
-                        <p>All donations donated through Helping Hands are distrubted to homeless shelters and women and children's refuge's so you can donate knowing your new or pre-loved items and lending a helping hand to those in need</p>
+                        <p>All donations donated through Helping Hands are distrubted to homeless shelters and women and children's refuge's so you can donate knowing your new or pre-loved items and lending a helping hand to those in need.</p>
                     </div>
                     <div className="item">
                     <h5 className="fw-bold">Why helping Hands?</h5>

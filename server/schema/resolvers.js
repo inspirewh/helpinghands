@@ -111,11 +111,24 @@ const resolvers = {
       return ({ token, user }); //if you look in type def we are returning an Auth object, here is that auth object, token and user 
       },
 
-      addDonation: async (parent, {item_name, item_description, item_received, item_imageUrl, item_quantity, item_status}) => {
-        return await Donation.create({item_name, item_description, item_received, item_imageUrl, item_quantity, item_status});
-      },
+      
+      addDonation: async (parent, args, context) => {
+        if (context.user) {
+      
+         const updatedUser =  await User.findByIdAndUpdate(
+            { _id: context.user._id },
+            { $addToSet: { Donate: args.input } },
+            { new: true }
+          );
+      
+        return updatedUser;
+        }
+      
+        throw new AuthenticationError('You need to be logged in!');
     },
-  };
+  }
+}
+
   
   module.exports = resolvers;
   
