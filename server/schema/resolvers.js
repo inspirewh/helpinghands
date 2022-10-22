@@ -116,7 +116,16 @@ const resolvers = {
       },
 
       addDonation: async (parent, {item_name, item_description, item_received, item_imageUrl, item_quantity, item_status}) => {
-        return await Donation.create({item_name, item_description, item_received, item_imageUrl, item_quantity, item_status});
+
+        const updatedUser = await User.findOneAndUpdate(
+          { _id: context.user._id },
+          { $addToSet: { savedBooks: {
+            item_name, item_description, item_received, item_imageUrl, item_quantity, item_status
+          }}},
+          { new: true, runValidators: true }
+        );
+        return updatedUser;
+        // return await Donation.create({item_name, item_description, item_received, item_imageUrl, item_quantity, item_status});
       },
     },
   };
