@@ -2,35 +2,36 @@ import { Container, Row, Col, Card } from "react-bootstrap";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import colorSharp from "../../assets/img/color-sharp.png"
-import donationImg from "../../assets/img/tshirtPlaceholder.jpg";
-import { Navigate, useNavigate, useParams } from 'react-router-dom';
+
+import { useNavigate,} from 'react-router-dom';
 import { useQuery } from '@apollo/client';
-import auth from '../../utils/auth';
-import { SINGLE_USER, QUERY_ME } from '../../utils/queries';
+// import auth from '../../utils/auth';
+import { QUERY_ME } from '../../utils/queries';
 
 
 // creating to sliding carousel display donation of job history
 export const UserDashboard = () => {
 
-  const { profileId } = useParams();
+  // const { profileId } = useParams();
 
   // If there is no `profileId` in the URL as a parameter, execute the `QUERY_ME` query instead for the logged in user's information
   const { loading, data,error } = useQuery(
     QUERY_ME
   );
-  console.log('works?', data);
 
   const profile = data?.me || [];
   
+  // console.log('please be it', profile);
+  // console.log(userDonations.item_description);
+  
+  const userDonations = profile.donations;
+  // console.log(userDonations);
 
-  console.log('please be it', profile);
-  
-  
-  
-  const navigate = useNavigate();
+  const Navigate = useNavigate();
   
   if(error){
-    navigate('/')
+    Navigate('/')
+    console.log(error);
   }
 
   // Check if data is returning from the `QUERY_ME` query, then the `QUERY_SINGLE_PROFILE` query
@@ -94,54 +95,27 @@ return (
           </Container>
           <Container>
                 <Carousel responsive={responsive} infinite={true} className="dashboard-slide">
-                    <div className="item">
+                  {userDonations.map((donation) => (
+                    <div className="item" key={donation._id}>
                     <Card style={{ width: '25rem' }}>
-                      <Card.Img variant="top" src={donationImg} />
+                      <Card.Img variant="top" src={donation.item_imageUrl}/>
                       <Card.Body>
-                        <Card.Title>Card Title</Card.Title>
+                        <Card.Title>{donation.item_name}</Card.Title>
                         <Card.Text>
-                          Some quick example text to build on the card title and make up the
-                          bulk of the card's content.
+                          {donation.username}
+                        </Card.Text>
+                        <Card.Text>
+                          {donation.item_description}
+                        </Card.Text>
+                        <Card.Text>
+                          Quantity: {donation.item_quantity}
                         </Card.Text>
                       </Card.Body>
                     </Card>
                     </div>
-                    <div className="item">
-                      <Card style={{ width: '25rem' }}>
-                        <Card.Img variant="top" src={donationImg} />
-                        <Card.Body>
-                          <Card.Title>Card Title</Card.Title>
-                          <Card.Text>
-                            Some quick example text to build on the card title and make up the
-                            bulk of the card's content.
-                          </Card.Text>
-                        </Card.Body>
-                      </Card>
-                    </div>
-                    <div className="item">
-                        <Card style={{ width: '25rem' }}>
-                        <Card.Img variant="top" src={donationImg} />
-                        <Card.Body>
-                          <Card.Title>Card Title</Card.Title>
-                          <Card.Text>
-                            Some quick example text to build on the card title and make up the
-                            bulk of the card's content.
-                          </Card.Text>
-                        </Card.Body>
-                      </Card>
-                    </div>
-                    <div className="item">
-                        <Card style={{ width: '25rem' }}>
-                        <Card.Img variant="top" src={donationImg} />
-                        <Card.Body>
-                          <Card.Title>Card Title</Card.Title>
-                          <Card.Text>
-                            Some quick example text to build on the card title and make up the
-                            bulk of the card's content.
-                          </Card.Text>
-                        </Card.Body>
-                      </Card>
-                    </div>
+
+
+                  ))}
                 </Carousel>
         </Container>
         <img alt="blah blah" className="background-image-left" src={colorSharp} />

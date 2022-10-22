@@ -16,10 +16,14 @@ const resolvers = {
   Query: {
     me: async (parent, args, context) => {
       if (context.user) {
-        return User.findOne({ _id: context.user._id }).populate({
+        const user = await  User.findOne({ _id: context.user._id }).populate({
           path: 'donation_ids',
           model: Donation,
         });
+        return {
+          ...user.toObject(), //converting mongoose model into js object 
+          donations: user.donation_ids
+        }
       }
       throw new Error('You need to be logged in!');
     },
