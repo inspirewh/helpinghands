@@ -3,7 +3,7 @@ import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import colorSharp from "../../assets/img/color-sharp.png"
 
-import { useNavigate,} from 'react-router-dom';
+import { Link, useNavigate,} from 'react-router-dom';
 import { useQuery } from '@apollo/client';
 // import auth from '../../utils/auth';
 import { QUERY_ME } from '../../utils/queries';
@@ -25,7 +25,7 @@ export const UserDashboard = () => {
   // console.log(userDonations.item_description);
   
   const userDonations = profile.donations;
-  // console.log(userDonations);
+  console.log(userDonations);
 
   const Navigate = useNavigate();
   
@@ -53,6 +53,10 @@ export const UserDashboard = () => {
       </h4>
     );
   }
+
+  // if (userDonations === undefined) {
+  //   console.log("you havent made any donations yet");
+  // }
 
 
     const responsive = {
@@ -84,7 +88,13 @@ return (
                     <h2>
                     {profile.username}, thank you for being a helping hand!  
                     </h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ornare congue pharetra. Curabitur non leo ut quam tincidunt maximus. Etiam id diam at velit ornare vehicula eu nec augue. Nunc id faucibus sem, ac mollis nulla. Sed luctus viverra pulvinar.</p>
+                    <p>Your contributions to the community will go a long way to lending a helping hand to people and families less fortunate.
+                      All of us here at Helping Hands would like to thank you for joining the millions of kind people willing to help others out.
+                    </p>
+                    <h4>
+                      This is your User Dashboard, 
+                      you can track your donations here on this page with updated information or <a href="/connect">Get In Touch</a> with us.
+                    </h4>
                     <h4>
                       Your recent donations: 
                     </h4>
