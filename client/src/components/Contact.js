@@ -50,7 +50,7 @@ export const Chat = () => {
                                 </Col>
                                 <Col>
                                     <textarea row="6" name="user_message" placeholder= "Message" required= {true} />
-                                    <button type="submit" value="Send" placeholder='Enter Your Message Here' required= {true} >Send</button>
+                                    <button type="submit" id="submitButton" value="Send" placeholder='Enter Your Message Here' required= {true} >Send</button>
                                 </Col>
                             </Row>
                         </form>

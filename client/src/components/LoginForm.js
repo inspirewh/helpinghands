@@ -52,11 +52,11 @@ export const LoginForm = (props) => {
                                 </Col>
                                 <Col>
                                     <p className="hyperlink-txt">Dont' have an account? <a href="/signup">Click here to signup.</a></p>
-                                    <button to='/dashboard' type="submit"></button>
+                                    <button to='/dashboard' type="submit" id='submitButton'>Submit</button>
                                 </Col>
                                 {error ? (
                                     <div>
-                                        <p className="error-text">The provided credentials are incorrect</p>
+                                        <h6 className="error-text text-danger">The provided credentials are incorrect</h6>
                                     </div>
                                     ) : null}
                             </Row>

@@ -886,6 +886,10 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 	position: absolute;
 }
 
+#submitButton {
+  margin-bottom: 14rem;
+}
+
 .hyperlink-txt{
   margin-top: 0px!important;
   font-size: 16px !important;
@@ -976,6 +980,9 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 	position: absolute;
 }
 
+#submitButton {
+  margin-bottom: 14rem;
+}
 
 /************ DashboardCss ************/
 .dashboard {
