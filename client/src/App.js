@@ -21,6 +21,7 @@ import UserConnect from './pages/user/UserContact';
 import { Navbar } from 'react-bootstrap';
 import HowitWorks from './pages/HowitWorks';
 import Donations from './pages/user/DonationFeed';
+import UserHome from './pages/user/UserHome';
 
 const httpLink = createHttpLink({
   uri: '/graphql',
@@ -52,6 +53,10 @@ function App() {
             <Route 
               path= "/" 
               element={<Home/>} 
+              />
+              <Route 
+              path= "/home" 
+              element={<UserHome/>} 
               />
             <Route 
               path= "/about" 
