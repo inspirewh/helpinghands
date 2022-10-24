@@ -1,7 +1,6 @@
 import { Container, Row, Col, Card } from "react-bootstrap";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
-import colorSharp from "../assets/img/color-sharp.png"
 
 import { useQuery } from '@apollo/client'; //
 import { ALL_USERS } from '../utils/queries'; 
@@ -77,7 +76,6 @@ return (
                     
                 </Carousel>
         </Container>
-        <img className="background-image-left" alt="bg pic" src={colorSharp} />
       </section>
   )
 }

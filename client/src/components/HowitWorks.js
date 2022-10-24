@@ -1,7 +1,6 @@
 import { Container, Row, Col } from "react-bootstrap";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
-import colorSharp from "../assets/img/color-sharp.png"
 import howitworks from "../assets/img/howitworks.jpg";
 
 
@@ -64,7 +63,6 @@ return (
                 </Col>
             </Row>
         </Container>
-        <img alt="How it works image" className="background-image-left" src={colorSharp} />
       </section>
   )
 }
