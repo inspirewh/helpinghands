@@ -107,8 +107,8 @@ return (
                   {userDonations.map((donation) => (
                     <div className="item" key={donation._id}>
                     <Card style={{ width: '25rem' }}>
-                      <Card.Img variant="top" src={donation.item_imageUrl}/>
-                      <Card.Body>
+                      <Card.Img variant="top" style={{height:'25rem', width: '100%', objectFit:'cover'}} src={donation.item_imageUrl}/>
+                      <Card.Body style={{ height: '11rem'}}>
                         <Card.Title>{donation.item_name}</Card.Title>
                         <Card.Text>
                           {donation.username}

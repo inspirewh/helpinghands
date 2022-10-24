@@ -62,13 +62,13 @@ return (
                 <Carousel responsive={responsive} infinite={true} className="donation-slide">
                   {donations.map((donation) => (
                     <div className="item" key={donation._id}>
-                    <Card style={{ width: '100%'}}>
+                    <Card style={{ width: '25rem'}}>
                       <Card.Img variant="top" style={{height:'25rem', width: '100%', objectFit:'cover'}} src={donation.item_imageUrl}/>
-                      <Card.Body style={{ height: '14rem'}}>
+                      <Card.Body style={{ height: '13.5rem'}}>
                         <Card.Title>{donation.item_name}</Card.Title>
+                        <Card.Text>{donation.item_description} </Card.Text>
                         <Card.Text>Donated by {donation.username}</Card.Text>
                         <Card.Text>Quantity: {donation.item_quantity}</Card.Text>
-                        <Card.Text>{donation.item_description} </Card.Text>
                       </Card.Body>
                     </Card>
                     </div>
