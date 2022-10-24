@@ -80,7 +80,7 @@ i                         </Row>
                                 name="itemDescription"
                                 value={itemDescription}                                 
                                 onChange={(event) => setItemDescription(event.target.value)}></input>
-                                <button to='/dashboard' type="submit"></button>
+                                <button to='/dashboard' type="submit">Submit</button>
                                 {error && (
                                     <div className="col-12 my-3 bg-danger text-white p-3">
                                     {error.message}
