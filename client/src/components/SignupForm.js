@@ -96,7 +96,7 @@ export const SignupForm = () => {
                                 </Col>
                                 <Col sm={6} className="px-1">
                                     <input 
-                                    type="text"
+                                    type="password"
                                     name="password"
                                     placeholder= "Password"
                                     value={formValues.password} 
@@ -106,7 +106,7 @@ export const SignupForm = () => {
                                 <Col>
                                     <p className="hyperlink-txt">Already have an account? <a href="/login">Click here to login.</a>
                                     </p>
-                                    <button type="submit">Submit</button>
+                                    <button type="submit" id="submitButton">Submit</button>
                                 </Col>
                             </Row>
                         </form>
