@@ -63,7 +63,7 @@ export const Donate = () => {
                                 </Col>
                             </Row>
                             <Row>
-                                <Col sm={6} className="px-1">
+                                <Col>
                                 <input 
                                 placeholder= "Title" 
                                 type= 'text'
