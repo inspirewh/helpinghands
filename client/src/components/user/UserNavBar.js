@@ -41,13 +41,13 @@ export const UserNavBar = () => {
                 <Nav className="me-auto">
                 <Link to="/donate" className={activeLink === 'donate' ? 'active navbar-link' : 'navbar-link'} onClick={() => onUpdateActiveLink('about')}>Get Donating</Link>
                 <Link to="/dashboard" className={activeLink === 'home' ? 'active navbar-link' : 'navbar-link'} onClick={() => onUpdateActiveLink('home')}>Recent Donations</Link>
-                <Link to="/donation-feed" className={activeLink === 'donationfeed' ? 'active navbar-link' : 'navbar-link'} onClick={() => onUpdateActiveLink('donationfeed')}>Donation Feed</Link>
+                <Link to="/donations-feed" className={activeLink === 'donationfeed' ? 'active navbar-link' : 'navbar-link'} onClick={() => onUpdateActiveLink('donationfeed')}>Donation Feed</Link>
                 <Link to="/connect" className={activeLink === 'connect' ? 'active navbar-link' : 'navbar-link'} onClick={() => onUpdateActiveLink('connect')}>Get in touch</Link>
 
 
                 </Nav>
                 <span className="navbar-text">
-                    <Link to="/login" id="loginbtn" className={activeLink === 'login' ? 'active navbar-link' : 'navbar-link'} onClick={() => onUpdateActiveLink('login')}>Logout</Link>
+                    <Link to="/" id="loginbtn" className={activeLink === 'login' ? 'active navbar-link' : 'navbar-link'} onClick={() => onUpdateActiveLink('login')}>Logout</Link>
                     <div className="social-icon">
                         <a href="www.facebook.com"><img src={navIcon1} alt="nav icon"/></a>
                         <a href="www.facebook.com"><img src={navIcon2} alt="nav icon"/></a>

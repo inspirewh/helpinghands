@@ -74,8 +74,10 @@ return (
                     </Card>
                     </div>
                   ))}
+                    
                 </Carousel>
         </Container>
+        <img className="background-image-left" alt="bg pic" src={colorSharp} />
       </section>
   )
 }
