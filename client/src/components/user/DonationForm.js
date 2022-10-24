@@ -1,15 +1,16 @@
 import { useState }from "react";
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { Col, Container, Row } from "react-bootstrap";
 import { useMutation } from '@apollo/client';
 import { ADD_DONATION } from '../../utils/mutations';
 import auth from '../../utils/auth';
 
 export const Donate = () => {
+    const navigate = useNavigate();
     const [itemImageUrl, setItemImageUrl] = useState('');  // TODO: fix, donation should be an object, not a string
     const [itemDescription, setItemDescription] = useState('');
     const [itemName, setItemName] = useState('');
-    const [itemQuantity, setItemQuantity] = useState('');
+    const [itemQuantity, setItemQuantity] = useState(0);
     const [addDonation, { error }] = useMutation(ADD_DONATION);
     const handleFormSubmit = async (event) => {
       event.preventDefault();
@@ -17,16 +18,17 @@ export const Donate = () => {
         const data = await addDonation({
           variables: { 
             // TODO: create a state for each input field
+            item_imageUrl: itemImageUrl,
             item_name: itemName, 
             item_description: itemDescription,
-            item_imageUrl: itemImageUrl,
-            item_quantity: itemQuantity,
+            item_quantity: Number(itemQuantity),
         },
         });
         setItemImageUrl('');
-        setItemDescription('');
         setItemName('');
-        setItemQuantity('');
+        setItemDescription('');
+        setItemQuantity(0);
+        navigate("/dashboard");
       } catch (err) {
         console.error(err);
       }

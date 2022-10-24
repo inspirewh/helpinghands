@@ -71,10 +71,6 @@ const resolvers = {
 
       
       createUser: async (parent, {username, email, password }, context ) => {
-        const user = await User.create({
-          username, email, password
-        });
-        
         // validate user input from validators file
         const { valid, errors } = validateSignUpInput(username, email, password);
         if (!valid) {
@@ -88,7 +84,10 @@ const resolvers = {
             }
           });
         }
-
+        const user = await User.create({
+          username, email, password
+        });
+        
         if(!user){
           throw new Error('Something went wrong')
         }
@@ -115,11 +114,11 @@ const resolvers = {
       return ({ token, user }); //if you look in type def we are returning an Auth object, here is that auth object, token and user 
       },
 
-      addDonation: async (parent, {item_name, item_description, item_received, item_imageUrl, item_quantity, item_status}) => {
+      addDonation: async (parent, {item_name, item_description, item_received, item_imageUrl, item_quantity, item_status}, context) => {
 
         const updatedUser = await User.findOneAndUpdate(
           { _id: context.user._id },
-          { $addToSet: { savedBooks: {
+          { $addToSet: { addDonation: {
             item_name, item_description, item_received, item_imageUrl, item_quantity, item_status
           }}},
           { new: true, runValidators: true }
