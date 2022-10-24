@@ -35,25 +35,9 @@ export const DonationFeed = () => {
         return {
           ...don,
           username: user.username,
-          ...don.item_received,
         }
       })
     })
-
-//     const receieved = donations.map((donation) => {
-//       return donation.item_received
-//     })
-
-// console.log(receieved)
-//     const isReceived = (receieved) => {
-//         if(receieved ++ === true){
-//           return "Item is received and waiting to find it's new home!"
-//         }else{
-//           return "Item is on it's way!"
-//         }
-//     }
-    /// show all donations in cards
-    // each card should have username
 
 return (
       <section className="donation" id="donation">
@@ -81,20 +65,17 @@ return (
                     <div className="item" key={donation._id}>
                     <Card style={{ width: '100%'}}>
                       <Card.Img variant="top" style={{height:'25rem', width: '100%', objectFit:'cover'}} src={donation.item_imageUrl}/>
-                      <Card.Body>
+                      <Card.Body style={{ height: '14rem'}}>
                         <Card.Title>{donation.item_name}</Card.Title>
                         <Card.Text>Donated by {donation.username}</Card.Text>
                         <Card.Text>Quantity: {donation.item_quantity}</Card.Text>
                         <Card.Text>{donation.item_description} </Card.Text>
-                        {/* <Card.Text>{isReceived()}</Card.Text> */}
                       </Card.Body>
                     </Card>
                     </div>
                   ))}
-                    
                 </Carousel>
         </Container>
-        <img className="background-image-left" alt="bg pic" src={colorSharp} />
       </section>
   )
 }
