@@ -1,70 +1,75 @@
-# Getting Started with Create React App
+# Helping Hands
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+![MIT-licensed](https://img.shields.io/badge/License-MIT-red)
 
-In the project directory, you can run:
+## Table of Contents 
+- [Description](#description)
+- [Licensing info](#license)
+- [Questions + Contact](#questions)
+- [Demo](#demo)
 
-### `npm start`
+## Demo
+![screenshot](client/src/assets/img/helpinghandsscreenshot.PNG)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Description
+Helping hands purpose is intended for helping those in need, by donating unused items through our charity app.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## User Story
 
-### `npm test`
+AS a User, who enjoys helping other people
+<br>
+I WANT a platform to be able to help people connect, to help other people that may have less than us.
+<br>
+SO THAT we can help them get some essential items they may not have, but need, or may not need but can't afford
+<br>
+<br>
+WHEN I visit the site, THEN have options to click the about us, how it works, donation feed and start donating button
+<br>
+When I click on the about page, THEN get a bio of the company
+<br>
+WHEN I click how it works, THEN i get a small walkthrough about what happens after you hit the donation button
+<br>
+WHEN I click donation feed, THEN I can see who else has donated and what they have donated
+<br>
+WHEN I click the donate button, if not logged in taken to login page, otherwise THEN im taken to the “donate page”
+<br>
+WHEN I view the donate page, THEN i am presented with a form to donate items
+<br>
+WHEN i click contact, THEN i am able to fill in my information to contact the website
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Installation Instructions
+Start by cloning the repository to your local machine
+ <br> 
+ open the folder in VScode (or a coding app similiar) 
+ <br> 
+ in the console, type npm install 
+ <br> 
+ type: npm start to run the app
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Usage Information
+Spreading the word, helping those in need
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## License
+![MIT-licensed](https://img.shields.io/badge/License-MIT-red)
+<br>
+[License information](https://opensource.org/licenses)
 
-### `npm run eject`
+## Questions
+feel free to contact me, for any questions or improvements you may think of
+<br>
+Visit our GitHub profile here: [Jake Roberts](https://github.com/JRoberts94)
+<br>
+Visit our GitHub profile here: [Olivia Orme](https://github.com/njenkins2727)
+<br>
+Visit our GitHub profile here: [Nathan Jenkins](https://github.com/inspirewh)
+<br>
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Deployed
+[Deployed Site]()
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Technology used
+javascript <br> node <br> react <br> MUI library <br> emailjs-com <br> (for a full list checkout the package.json file )
