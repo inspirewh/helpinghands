@@ -45,17 +45,17 @@ return (
                     </div>
                   </div>
                 <Carousel responsive={responsive} infinite={true} className="about-slide">
-                    <div className="item">
-                        <h3>Web Development</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ornare congue pharetra. Curabitur non leo ut quam tincidunt maximus. Etiam id diam at velit ornare vehicula eu nec augue. Nunc id faucibus sem, ac mollis nulla. Sed luctus viverra pulvinar.</p>
+                    <div className="item text-dark m-2">
+                        <h3>Kindness</h3>
+                        <p>Through our platform you can offer an items to people in need. We believe that when you pay it forward the effects of positive change multiply at a much faster rate. It creates shape similar to a root system of a tree. The more roots, the stronger the foundation.</p>
                     </div>
-                    <div className="item">
-                        <h3>Web Design</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ornare congue pharetra. Curabitur non leo ut quam tincidunt maximus. Etiam id diam at velit ornare vehicula eu nec augue. Nunc id faucibus sem, ac mollis nulla. Sed luctus viverra pulvinar.</p>
+                    <div className="item text-dark m-2">
+                        <h3>Locations</h3>
+                        <p>We have multiple locations around the world. Simply post your donation to a drop off point and we will handle the rest. The <b>last Friday</b> of <b>every month</b>, helpers at helping hand roll out the items to the people in need all across the world </p>
                     </div>
-                    <div className="item">
-                        <h3>UX/UI</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ornare congue pharetra. Curabitur non leo ut quam tincidunt maximus. Etiam id diam at velit ornare vehicula eu nec augue. Nunc id faucibus sem, ac mollis nulla. Sed luctus viverra pulvinar.</p>
+                    <div className="item text-dark m-2">
+                        <h3>Trust</h3>
+                        <p>We have built and are continuing to build a trustworthy relationship with all our helping hands. As we have just started out reach out to us on how we can improve and feel free to leave us a good review once you recieve the confirmation that your item is in safe hands</p>
                     </div>
                 </Carousel>
                 </Col>
