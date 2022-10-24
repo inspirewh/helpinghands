@@ -16,10 +16,14 @@ const resolvers = {
   Query: {
     me: async (parent, args, context) => {
       if (context.user) {
-        return User.findOne({ _id: context.user._id }).populate({
+        const user = await  User.findOne({ _id: context.user._id }).populate({
           path: 'donation_ids',
           model: Donation,
         });
+        return {
+          ...user.toObject(), //converting mongoose model into js object 
+          donations: user.donation_ids
+        }
       }
       throw new Error('You need to be logged in!');
     },
@@ -111,23 +115,20 @@ const resolvers = {
       return ({ token, user }); //if you look in type def we are returning an Auth object, here is that auth object, token and user 
       },
 
-      
-      addDonation: async (parent, args, context) => {
-        if (context.user) {
-      
-         const updatedUser =  await User.findByIdAndUpdate(
-            { _id: context.user._id },
-            { $addToSet: { Donate: args.input } },
-            { new: true }
-          );
-      
+      addDonation: async (parent, {item_name, item_description, item_received, item_imageUrl, item_quantity, item_status}) => {
+
+        const updatedUser = await User.findOneAndUpdate(
+          { _id: context.user._id },
+          { $addToSet: { savedBooks: {
+            item_name, item_description, item_received, item_imageUrl, item_quantity, item_status
+          }}},
+          { new: true, runValidators: true }
+        );
         return updatedUser;
-        }
-      
-        throw new AuthenticationError('You need to be logged in!');
+        // return await Donation.create({item_name, item_description, item_received, item_imageUrl, item_quantity, item_status});
+      },
     },
   }
-}
 
   
   module.exports = resolvers;

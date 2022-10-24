@@ -2,35 +2,36 @@ import { Container, Row, Col, Card } from "react-bootstrap";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import colorSharp from "../../assets/img/color-sharp.png"
-import donationImg from "../../assets/img/tshirtPlaceholder.jpg";
-import { Navigate, useNavigate, useParams } from 'react-router-dom';
+
+import { Link, useNavigate,} from 'react-router-dom';
 import { useQuery } from '@apollo/client';
-import auth from '../../utils/auth';
-import { SINGLE_USER, QUERY_ME } from '../../utils/queries';
+// import auth from '../../utils/auth';
+import { QUERY_ME } from '../../utils/queries';
 
 
 // creating to sliding carousel display donation of job history
 export const UserDashboard = () => {
 
-  const { profileId } = useParams();
+  // const { profileId } = useParams();
 
   // If there is no `profileId` in the URL as a parameter, execute the `QUERY_ME` query instead for the logged in user's information
   const { loading, data,error } = useQuery(
     QUERY_ME
   );
-  console.log('works?', data);
 
   const profile = data?.me || [];
   
+  // console.log('please be it', profile);
+  // console.log(userDonations.item_description);
+  
+  const userDonations = profile.donations;
+  console.log(userDonations);
 
-  console.log('please be it', profile);
-  
-  
-  
-  const navigate = useNavigate();
+  const Navigate = useNavigate();
   
   if(error){
-    navigate('/')
+    Navigate('/')
+    console.log(error);
   }
 
   // Check if data is returning from the `QUERY_ME` query, then the `QUERY_SINGLE_PROFILE` query
@@ -52,6 +53,10 @@ export const UserDashboard = () => {
       </h4>
     );
   }
+
+  // if (userDonations === undefined) {
+  //   console.log("you havent made any donations yet");
+  // }
 
 
     const responsive = {
@@ -83,9 +88,15 @@ return (
                     <h2>
                     {profile.username}, thank you for being a helping hand!  
                     </h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ornare congue pharetra. Curabitur non leo ut quam tincidunt maximus. Etiam id diam at velit ornare vehicula eu nec augue. Nunc id faucibus sem, ac mollis nulla. Sed luctus viverra pulvinar.</p>
+                    <p>Your contributions to the community will go a long way to lending a helping hand to people and families less fortunate.
+                      <br></br>From all of us here at Helping Hands we would like to thank you for joining the millions of kind people willing to help others out and lend a hand to those in need.
+                      <br></br>Here, on your dashboard you can track your donations with updated information or <a href="/connect" className="hyperlink">Get In Touch</a> with us.
+                    </p>
                     <h4>
-                      Your recent donations: 
+                      
+                    </h4>
+                    <h4>
+                    Your recent donations: 
                     </h4>
                     
                   </div>
@@ -94,54 +105,27 @@ return (
           </Container>
           <Container>
                 <Carousel responsive={responsive} infinite={true} className="dashboard-slide">
-                    <div className="item">
+                  {userDonations.map((donation) => (
+                    <div className="item" key={donation._id}>
                     <Card style={{ width: '25rem' }}>
-                      <Card.Img variant="top" src={donationImg} />
+                      <Card.Img variant="top" src={donation.item_imageUrl}/>
                       <Card.Body>
-                        <Card.Title>Card Title</Card.Title>
+                        <Card.Title>{donation.item_name}</Card.Title>
                         <Card.Text>
-                          Some quick example text to build on the card title and make up the
-                          bulk of the card's content.
+                          {donation.username}
+                        </Card.Text>
+                        <Card.Text>
+                          {donation.item_description}
+                        </Card.Text>
+                        <Card.Text>
+                          Quantity: {donation.item_quantity}
                         </Card.Text>
                       </Card.Body>
                     </Card>
                     </div>
-                    <div className="item">
-                      <Card style={{ width: '25rem' }}>
-                        <Card.Img variant="top" src={donationImg} />
-                        <Card.Body>
-                          <Card.Title>Card Title</Card.Title>
-                          <Card.Text>
-                            Some quick example text to build on the card title and make up the
-                            bulk of the card's content.
-                          </Card.Text>
-                        </Card.Body>
-                      </Card>
-                    </div>
-                    <div className="item">
-                        <Card style={{ width: '25rem' }}>
-                        <Card.Img variant="top" src={donationImg} />
-                        <Card.Body>
-                          <Card.Title>Card Title</Card.Title>
-                          <Card.Text>
-                            Some quick example text to build on the card title and make up the
-                            bulk of the card's content.
-                          </Card.Text>
-                        </Card.Body>
-                      </Card>
-                    </div>
-                    <div className="item">
-                        <Card style={{ width: '25rem' }}>
-                        <Card.Img variant="top" src={donationImg} />
-                        <Card.Body>
-                          <Card.Title>Card Title</Card.Title>
-                          <Card.Text>
-                            Some quick example text to build on the card title and make up the
-                            bulk of the card's content.
-                          </Card.Text>
-                        </Card.Body>
-                      </Card>
-                    </div>
+
+
+                  ))}
                 </Carousel>
         </Container>
         <img alt="blah blah" className="background-image-left" src={colorSharp} />

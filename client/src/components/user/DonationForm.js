@@ -5,7 +5,7 @@ import { useMutation } from '@apollo/client';
 import { ADD_DONATION } from '../../utils/mutations';
 import auth from '../../utils/auth';
 
-export const Donate = ({ profileId }) => {
+export const Donate = () => {
     const [itemImageUrl, setItemImageUrl] = useState('');  // TODO: fix, donation should be an object, not a string
     const [itemDescription, setItemDescription] = useState('');
     const [itemName, setItemName] = useState('');
@@ -17,9 +17,9 @@ export const Donate = ({ profileId }) => {
         const data = await addDonation({
           variables: { 
             // TODO: create a state for each input field
-            item_imageUrl: itemImageUrl,
-            item_description: itemDescription,
             item_name: itemName, 
+            item_description: itemDescription,
+            item_imageUrl: itemImageUrl,
             item_quantity: itemQuantity,
         },
         });
@@ -78,7 +78,7 @@ i                         </Row>
                                 name="itemDescription"
                                 value={itemDescription}                                 
                                 onChange={(event) => setItemDescription(event.target.value)}></input>
-                                <button type="submit"></button>
+                                <button to='/dashboard' type="submit"></button>
                                 {error && (
                                     <div className="col-12 my-3 bg-danger text-white p-3">
                                     {error.message}

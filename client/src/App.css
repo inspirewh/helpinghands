@@ -67,12 +67,23 @@ input:focus, textarea:focus, select:focus {
   outline: none;
 }
 
+.hyperlink{
+  color:#535353;
+  text-decoration: none;
+}
+.hyperlink:hover{
+  color:#B02F77;
+  text-decoration: none;
+  font-weight: 1000 !important;
+}
+
 @media (min-width:1700px) {
 	main .container {
 		max-width: 100%;
 		padding: 0 150px;
 	}
 }
+
 
 p.success {
 	color: green;
@@ -83,7 +94,7 @@ p.danger {
 }
 /************ Navbar Css ************/
 nav.navbar {
-  padding: 18px 0;
+  padding: 18px 0 !important;
   position: fixed;
   width: 100%;
   top: 0;
@@ -99,6 +110,42 @@ nav.navbar.scrolled {
 }
 nav.navbar a.navbar-brand {
     width: 9%;
+}
+
+@media(min-width:992px) and (max-width:1699px ) {
+  nav.navbar .navbar-nav a.navbar-link.navbar-link {
+    font-weight: 400;
+    color: #B02F77 !important;
+    letter-spacing: 0.8px;
+    padding: 0 25px;
+    font-size: 14px !important;
+    font-weight: 500;
+    text-decoration: none ;
+  }
+  .navbar-text button {
+    font-weight: 500 !important;
+    color: #B02F77;
+    border: 1px solid #B02F77;
+    padding: 10px 26px !important;
+    font-size: 12px !important;
+    margin-left: 10px !important;
+  }
+  .social-icon a {
+    width: 22px !important;
+    height: 22px !important;
+  }
+  .social-icon a::before {
+    content: "";
+    width: 22px !important;
+    height: 22px !important
+  }
+  #loginbtn{
+    font-size: 14px!important;
+  }
+  .social-icon {
+    display: inline-block;
+    margin-left: 4px!important;
+  }
 }
 
 nav.navbar .navbar-nav a.navbar-link.navbar-link {
@@ -361,7 +408,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   color: #535353;
 }
 .about img {
-  width: 50%;
+  width: 65%;
 }
 .about-imgbx::before {
   content: "";
@@ -383,7 +430,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   background: linear-gradient(90.21deg, #6d6d6d -5.91%, #090619 111.58%);
   opacity: 0.85;
   position: absolute;
-  width: 50%;
+  width: 65%;
   height: 0;
   transition: 0.4s ease-in-out;
 }
@@ -663,7 +710,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 /************ signupform Css ************/
 .signup {
   margin-top: 0;
-  padding: 260px 0 100px 0;
+  padding: 250px 0 160px 0;
   background-image: url('./assets/img/helpinghands-bg.png');
   background-position: center;
   background-size: cover;
@@ -712,35 +759,38 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 }
 .signup form button {
   font-weight: 700;
-  color: #000;
-  background-color: #fff;
-  padding: 14px 48px;
+  color: #000000;
+  padding: 18px 34px;
   font-size: 18px;
-  margin: -5px 0 500px 0;
-  border-radius: 0;
-  position: relative;
-  transition: 0.3s ease-in-out;
+  margin-left: 18px;
+	position: relative;
+	background-color: #ffffff;
+	transition: 0.3s ease-in-out;
 }
 .signup form button span {
   z-index: 1;
-  position: relative;
 }
-.signup form button:hover {
-  color: #fff;
-}
+
 .signup form button::before {
   content: "";
-  background-color: #B02F77;
-  width: 0;
+  width: 0%;
   height: 100%;
   position: absolute;
-  top: 0;
+  background-color: rgb(0, 0, 0) !important;
   left: 0;
-  z-index: 0;
+  top: 0;
+  z-index: -1;
   transition: 0.3s ease-in-out;
 }
-.signup form button:hover::before {
-  width: 100%;
+.signup form button:hover {
+  color:#B02F77;
+}
+
+.signup form button:hover::before{
+	content: "";
+	width: 100%;
+	height: 100%;
+	position: absolute;
 }
 
 .validate-text {
@@ -755,7 +805,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 /************ signupform Css ************/
 .login {
   margin-top: 0;
-  padding: 260px 0 100px 0;
+  padding: 250px 0 160px 0;
   background-image: url('./assets/img/helpinghands-bg.png');
   background-position: center;
   background-size: cover;
@@ -802,38 +852,40 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   color: #121212;
   opacity: 0.8;
 }
-.login form button {
+.login button {
   font-weight: 700;
-  color: #000;
-  background-color: #fff;
-  padding: 14px 48px;
+  color: #ffffff !important;
+  padding: 18px 34px;
   font-size: 18px;
-  margin: 25px 0 500px 0;
-  border-radius: 0;
-  position: relative;
-  transition: 0.3s ease-in-out;
+  margin-left: 18px;
+	position: relative;
+	background-color: #000000;
+	transition: 0.3s ease-in-out;
 }
-.login form button span {
+.login button span {
   z-index: 1;
-  position: relative;
 }
-.login form button:hover {
-  color: #fff;
-}
-.login form button::before {
+.login button::before {
   content: "";
-  background: #B02F77;
-  width: 0;
+  width: 0%;
   height: 100%;
   position: absolute;
-  top: 0;
+  background-color: rgb(0, 0, 0) !important;
   left: 0;
-  z-index: 0;
+  top: 0;
+  z-index: -1;
   transition: 0.3s ease-in-out;
 }
-.login form button:hover::before {
-  width: 100%;
+.login button:hover {
+  color:#B02F77;
 }
+.login button:hover::before {
+	content: "";
+	width: 100%;
+	height: 100%;
+	position: absolute;
+}
+
 .hyperlink-txt{
   margin-top: 0px!important;
   font-size: 16px !important;
@@ -890,36 +942,40 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 }
 .contact form button {
   font-weight: 700;
-  color: #000;
-  background-color: #fff;
-  padding: 14px 48px;
+  color: #000000;
+  padding: 18px 34px;
   font-size: 18px;
-  margin: 25px 0 500px 0;
-  border-radius: 0;
-  position: relative;
-  transition: 0.3s ease-in-out;
+  margin-left: 18px;
+	position: relative;
+	background-color: #ffffff;
+	transition: 0.3s ease-in-out;
 }
 .contact form button span {
   z-index: 1;
-  position: relative;
 }
-.contact form button:hover {
-  color: #fff;
-}
+
 .contact form button::before {
   content: "";
-  background: #B02F77;
-  width: 0;
+  width: 0%;
   height: 100%;
   position: absolute;
-  top: 0;
+  background-color: rgb(0, 0, 0) !important;
   left: 0;
-  z-index: 0;
+  top: 0;
+  z-index: -1;
   transition: 0.3s ease-in-out;
 }
-.contact form button:hover::before {
-  width: 100%;
+.contact form button:hover {
+  color:#B02F77;
 }
+
+.contact form button:hover::before{
+	content: "";
+	width: 100%;
+	height: 100%;
+	position: absolute;
+}
+
 
 /************ DashboardCss ************/
 .dashboard {
