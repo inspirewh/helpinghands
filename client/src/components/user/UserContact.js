@@ -28,7 +28,7 @@ export const UserChat = () => {
             <Container>
                 <Row className="justify-content-center align-items-center">
                     <Col md={6} className="inputForm2">
-                        <h2>Get in touch</h2>
+                        <h2 className="mt-2">Get in touch</h2>
                         <p>Want to know more about Helping Hands. Or want to get involved more and support those in need? Get in touch by completing the form below and we'll be in touch.</p>
                         <form>
                             <Row>
@@ -46,7 +46,7 @@ export const UserChat = () => {
                                 </Col>
                                 <Col>
                                     <textarea row="6" value={formDetails.message} placeholder= "Message" onChange={(e) => onFormUpdate('message', e.target.value)}/>
-                                    <button type="submit"><span>{buttontext}</span></button>
+                                    <button className="mb-2" type="submit"><span>{buttontext}</span></button>
                                 </Col>
                                 {
                                     status.message &&
