@@ -1,10 +1,12 @@
 import React, { useRef, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import emailjs from 'emailjs-com';
 import { validateEmail } from '../../utils/validateEmail';
 // import BaseLayout from "../layouts/BaseLayout";
 import { Col, Container, Row } from "react-bootstrap";
 
 export const UserChat = () => {
+    const navigate = useNavigate();
     const form = useRef();
     const [email, setEmail] = useState('');
 
@@ -24,7 +26,9 @@ export const UserChat = () => {
         }, (error) => {
             console.log(error.text);
         });
-        alert("email sent!, I will be in touch :)");
+        navigate("/dashboard");
+
+        
     };
     
     return (
@@ -50,7 +54,7 @@ export const UserChat = () => {
                                 </Col>
                                 <Col>
                                     <textarea row="6" name="user_message" placeholder= "Message" required= {true} />
-                                    <button type="submit" id="submitButton" value="Send" placeholder='Enter Your Message Here' required= {true} >Send</button>
+                                    <button to='/dashboard' type="submit" id="submitButton" value="Send" placeholder='Enter Your Message Here' required= {true} >Send</button>
                                 </Col>
                             </Row>
                         </form>

@@ -1174,36 +1174,14 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 }
 .userContact form button {
   font-weight: 700;
-  color: #ffffff;
-  background-color: #B02F77;
-  padding: 14px 48px;
+  color: #ffffff !important;
+  padding: 18px 34px;
   font-size: 18px;
-  margin: 25px 0 500px 0;
-  border-radius: 0;
-  position: relative;
-  transition: 0.3s ease-in-out;
+  margin-left: 18px;
+	position: relative;
+	background-color: #000000;
 }
-.userContact form button span {
-  z-index: 1;
-  position: relative;
-}
-.userContact form button:hover {
-  color: #fff;
-}
-.userContact form button::before {
-  content: "";
-  background: #000000;
-  width: 0;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 0;
-  transition: 0.3s ease-in-out;
-}
-.userContact form button:hover::before {
-  width: 100%;
-}
+
 
 
 /************ Donation Form Css ************/
@@ -1269,35 +1247,13 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 }
 .donationForm form button {
   font-weight: 700;
-  color: #ffffff;
-  background-color: #B02F77;
-  padding: 14px 48px;
+  color: #ffffff !important;
+  padding: 18px 34px;
   font-size: 18px;
-  margin: 25px 0 70px 0;
-  border-radius: 0;
-  position: relative;
-  transition: 0.3s ease-in-out;
-}
-.donationForm form button span {
-  z-index: 1;
-  position: relative;
-}
-.donationForm form button:hover {
-  color: #fff;
-}
-.donationForm form button::before {
-  content: "";
-  background: #000000;
-  width: 0;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 0;
-  transition: 0.3s ease-in-out;
-}
-.donationForm form button:hover::before {
-  width: 100%;
+  margin-left: 18px;
+  margin: 15px 15px !important;
+	position: relative;
+	background-color: #000000;
 }
 
 /************ Footer Css ************/
